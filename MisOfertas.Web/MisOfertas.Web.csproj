@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -120,11 +126,20 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdministratorController.cs" />
+    <Compile Include="Controllers\AssociationManagerController.cs" />
+    <Compile Include="Controllers\ConsumerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StoreManagerController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Filters\AuthorizeAdmin.cs" />
+    <Compile Include="Filters\AuthorizeAssociationManager.cs" />
+    <Compile Include="Filters\AuthorizeConsumer.cs" />
+    <Compile Include="Filters\AuthorizeStoreManager.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\LocalDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -163,11 +178,16 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\User\LoggedIn.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\Administrator\Index.cshtml" />
+    <Content Include="Views\AssociationManager\Index.cshtml" />
+    <Content Include="Views\Consumer\Index.cshtml" />
+    <Content Include="Views\StoreManager\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -181,6 +201,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MisOfertas.CapaDatos\MisOfertas.CapaDatos.csproj">
+      <Project>{0e257b32-b2b6-45ad-ac96-b137437d9e8a}</Project>
+      <Name>MisOfertas.CapaDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MisOfertas.CapaNegocio\MisOfertas.CapaNegocio.csproj">
+      <Project>{bf02efca-5f1e-4360-8174-29e4c2e62a7a}</Project>
+      <Name>MisOfertas.CapaNegocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
