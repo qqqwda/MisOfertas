@@ -26,5 +26,7 @@ namespace MisOfertas.CapaDatos
         }
 
         public DbSet<User> Users { get; set; }
+
+
     }
 }
