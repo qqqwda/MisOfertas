@@ -11,10 +11,14 @@ namespace MisOfertas.CapaDatos.Models
     {
         [Key]
         public int IdEmpresa { get; set; }
-        public string Rut { get; set; }
-        public string Logo { get; set; }
-        public string Correo { get; set; }
+        public string NombreEmpresa { get; set; }
         public string Direccion { get; set; }
-        public int Numero { get; set; }
+        public int Telefono { get; set; }
+        public string Comuna { get; set; }
+        public string Region { get; set; }
+        public string Rut { get; set; }
+
+        public virtual ICollection<Producto> Productos { get; set; }
+        public virtual ICollection<Local> Locales { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MisOfertas.CapaDatos.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace MisOfertas.CapaDatos
                 return new CommonContext();
 
             return instance;
-        } 
+        }
         #endregion
 
         public CommonContext() : base("DefaultConnection")
@@ -26,7 +27,11 @@ namespace MisOfertas.CapaDatos
         }
 
         public DbSet<User> Users { get; set; }
+        
+        public DbSet<TipoUsuario> TipoUsuarios { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
+        
 
     }
 }

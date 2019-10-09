@@ -16,7 +16,7 @@ namespace MisOfertas.CapaNegocio
 
         public UserSession Login(UserLoginRequest user)
         {
-
+            //Daniel 123
             var userHelper = CommonContext.GetInstance().Users.SingleOrDefault(u => u.Email == user.Email && u.Password == user.Password && u.IdUserType==user.IdUserType);
             if (!(userHelper == null))
             {

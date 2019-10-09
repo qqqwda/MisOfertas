@@ -7,22 +7,15 @@ using System.Threading.Tasks;
 
 namespace MisOfertas.CapaDatos.Models
 {
-    public class Opinion
+    public class OpinionOferta
     {
         [Key]
-        public int IdOpinion { get; set; }
-        public double Valoracion { get; set; }
-
-
-        public Usuario Usuario { get; set; }
-
-
+        public int IdOpinionOferta { get; set; }
+        public string Comentario { get; set; }
         public string Imagen { get; set; }
         public DateTime FechaPublicacion { get; set; }
+        public virtual Usuario Usuario { get; set; }
 
-
-
-
-        public Producto Producto { get; set; }
     }
+
 }

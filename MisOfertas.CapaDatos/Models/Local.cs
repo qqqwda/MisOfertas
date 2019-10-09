@@ -11,17 +11,8 @@ namespace MisOfertas.CapaDatos.Models
     {
         [Key]
         public int IdLocal { get; set; }
-
-
-        public Empresa Empresa { get; set; }
-
-
-
-        public string Descripcion { get; set; }
         public string Direccion { get; set; }
-
-
-
+        public string Descripcion { get; set; }
+        public Empresa Empresa { get; set; }
     }
-
 }

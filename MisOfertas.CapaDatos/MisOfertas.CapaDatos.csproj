@@ -49,16 +49,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonContext.cs" />
+    <Compile Include="Migrations\201910082331583_nueva.cs" />
+    <Compile Include="Migrations\201910082331583_nueva.Designer.cs">
+      <DependentUpon>201910082331583_nueva.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categoria.cs" />
-    <Compile Include="Models\ConcurrenciaCategoria.cs" />
-    <Compile Include="Models\ConcurrenciaUsuario.cs" />
     <Compile Include="Models\Empresa.cs" />
-    <Compile Include="Models\EncargadoVentas.cs" />
     <Compile Include="Models\Local.cs" />
-    <Compile Include="Models\Opinion.cs" />
+    <Compile Include="Models\Oferta.cs" />
+    <Compile Include="Models\OpinionOferta.cs" />
     <Compile Include="Models\Producto.cs" />
-    <Compile Include="Models\Puntos.cs" />
     <Compile Include="Models\TipoUsuario.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,6 +72,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201910082331583_nueva.resx">
+      <DependentUpon>201910082331583_nueva.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,25 +10,15 @@ namespace MisOfertas.CapaDatos.Models
     public class Producto
     {
         [Key]
-        public int IdProducto{ get; set; }
-        public string Descripcion{ get; set; }
-        public int CompraMinima { get; set; }
-        public int CompraMaxima { get; set; }
-        public DateTime FechaPublicacion { get; set; }
-        public int Valor { get; set; }
-        public double Descuento { get; set; }
-        public int Stock{ get; set; }
+        public int IdProducto { get; set; }
+        public decimal PrecioNormal { get; set; }
+        public string Descripcion { get; set; }
+        public string Marca { get; set; }
+        public string Modelo { get; set; }
+        public int Stock { get; set; }
+        public string Color { get; set; }
 
-
-
-        public EncargadoVentas EncargadoVentas { get; set; }
-
-        public Local Local { get; set; }
-
+        public Empresa Empresa { get; set; }
         public Categoria Categoria { get; set; }
-
-        
-
-
     }
 }
