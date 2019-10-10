@@ -30,6 +30,13 @@ namespace MisOfertas.CapaDatos
         
         public DbSet<TipoUsuario> TipoUsuarios { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Producto> Productos { get; set; }
+        public DbSet<OpinionOferta> OpinionOfertas { get; set; }
+        public DbSet<Oferta> Ofertas { get; set; }
+        public DbSet<Local> Locales { get; set; }
+        public DbSet<Empresa> Empresas { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
+
 
         
 

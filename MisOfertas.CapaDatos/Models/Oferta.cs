@@ -16,7 +16,7 @@ namespace MisOfertas.CapaDatos.Models
         public int CompraMax { get; set; }
         public DateTime FechaDisponibilidad { get; set; }
         public decimal Valor { get; set; }
-
+        public decimal PorcentajeDescuento { get; set; }
 
         public Producto Producto { get; set; }
         public virtual ICollection<OpinionOferta> OpinionOfertas { get; set; }

@@ -11,12 +11,16 @@ namespace MisOfertas.CapaDatos.Models
     {
         [Key]
         public int IdProducto { get; set; }
+        public string Nombre { get; set; }
         public decimal PrecioNormal { get; set; }
         public string Descripcion { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public int Stock { get; set; }
-        public string Color { get; set; }
+        public string Imagen { get; set; }
+        public DateTime FechaVencimiento { get; set; }
+        public string Temporada { get; set; }
+
 
         public Empresa Empresa { get; set; }
         public Categoria Categoria { get; set; }
