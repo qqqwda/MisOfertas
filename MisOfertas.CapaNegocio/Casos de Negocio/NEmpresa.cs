@@ -1,4 +1,5 @@
 ﻿using MisOfertas.CapaDatos;
+using MisOfertas.CapaDatos.JModels;
 using MisOfertas.CapaDatos.Models;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
         {
             this.Bd = new CommonContext();
         }
-        public Response<Empresa> Create(Empresa empresa)
+        public Response<Empresa> Create(EmpresaModel empresa)
         {
             if (string.IsNullOrEmpty(empresa.Actividad))
             {
@@ -46,13 +47,30 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
                 return new Response<Empresa> { Answer = null, IsSuccess = false, Message = "Campo 'empresa' vacio" };
             }
 
-
-            this.Bd.Empresas.Add(empresa);
+            Empresa empresaModel = new Empresa
+            {
+                Actividad = empresa.Actividad,
+                Comuna = empresa.Comuna,
+                Direccion = empresa.Direccion,
+                Locales = null,
+                Usuarios = null,
+                Telefono = empresa.Telefono,
+                Nombre = empresa.Nombre,
+                Productos = null,
+                Region = empresa.Region,
+                Rut = empresa.Rut
+            };
+            this.Bd.Empresas.Add(empresaModel);
             this.Bd.SaveChanges();
 
-            return new Response<Empresa> { Answer = empresa, IsSuccess = true, Message = "Empresa creada correctamente" };
+            return new Response<Empresa> { Answer = empresaModel, IsSuccess = true, Message = "Empresa creada correctamente" };
            
 
+        }
+
+        public Response<Empresa> Create(Empresa obj)
+        {
+            throw new NotImplementedException();
         }
 
         public Response<Empresa> Delete(int id)

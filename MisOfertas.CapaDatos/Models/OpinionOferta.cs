@@ -14,6 +14,7 @@ namespace MisOfertas.CapaDatos.Models
         public string Comentario { get; set; }
         public string Imagen { get; set; }
         public DateTime FechaPublicacion { get; set; }
+        
         public virtual Usuario Usuario { get; set; }
 
     }

@@ -21,8 +21,9 @@ namespace MisOfertas.CapaDatos.Models
         public DateTime FechaVencimiento { get; set; }
         public string Temporada { get; set; }
 
-
-        public Empresa Empresa { get; set; }
-        public Categoria Categoria { get; set; }
+        
+        public virtual Empresa Empresa { get; set; }
+        
+        public virtual Categoria Categoria { get; set; }
     }
 }

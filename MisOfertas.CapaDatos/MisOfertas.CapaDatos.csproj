@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonContext.cs" />
+    <Compile Include="JModels\EmpresaModel.cs" />
     <Compile Include="Migrations\201910082331583_nueva.cs" />
     <Compile Include="Migrations\201910082331583_nueva.Designer.cs">
       <DependentUpon>201910082331583_nueva.cs</DependentUpon>
@@ -78,5 +79,6 @@
       <DependentUpon>201910082331583_nueva.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

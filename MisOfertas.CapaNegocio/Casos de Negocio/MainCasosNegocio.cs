@@ -10,7 +10,13 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
     {
         public MainCasosNegocio()
         {
-
+            Categoria = new NCategoria();
+            Empresa = new NEmpresa();
+            Local = new NLocal();
+            Oferta = new NOferta();
+            OpinionOferta = new NOpinionOferta();
+            Producto = new NProducto();
+            Usuario = new NUsuario();
         }
 
         public NCategoria Categoria { get; set; }

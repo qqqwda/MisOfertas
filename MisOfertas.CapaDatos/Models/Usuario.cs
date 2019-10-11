@@ -22,9 +22,9 @@ namespace MisOfertas.CapaDatos.Models
         public bool Suscrito { get; set; }
         public int Puntos { get; set; }
 
-
+        
         public virtual TipoUsuario TipoUsuario { get; set;  }
-        public Empresa Empresa { get; set; }
-        public virtual ICollection<Oferta> Ofertas { get; set; }
+        
+        public virtual Empresa Empresa { get; set; }
     }
 }

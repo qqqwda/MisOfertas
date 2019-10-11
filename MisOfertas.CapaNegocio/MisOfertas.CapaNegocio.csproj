@@ -58,6 +58,7 @@
     <Compile Include="Casos de Negocio\NUsuario.cs" />
     <Compile Include="IMaintanable.cs" />
     <Compile Include="MainNegocioModel.cs" />
+    <Compile Include="Operatividad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SessionManager.cs" />
     <Compile Include="UserManager.cs" />
