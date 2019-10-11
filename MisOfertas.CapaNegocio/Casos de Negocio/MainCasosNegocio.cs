@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MisOfertas.CapaNegocio.Casos_de_Negocio
 {
-    class MainCasosNegocio
+    public class MainCasosNegocio
     {
         public MainCasosNegocio()
         {

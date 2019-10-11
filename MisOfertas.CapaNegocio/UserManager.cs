@@ -10,6 +10,7 @@ namespace MisOfertas.CapaNegocio
     public class UserManager : IMaintanable<User>
     {
         
+        
         public UserManager()
         {
             
