@@ -36,6 +36,7 @@ namespace MisOfertas.CapaDatos
         public DbSet<Local> Locales { get; set; }
         public DbSet<Empresa> Empresas { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Valoracion> Valoraciones { get; set; }
         
 
 

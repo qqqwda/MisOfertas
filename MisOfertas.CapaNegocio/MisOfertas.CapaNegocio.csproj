@@ -56,9 +56,9 @@
     <Compile Include="Casos de Negocio\NOpinionOferta.cs" />
     <Compile Include="Casos de Negocio\NProducto.cs" />
     <Compile Include="Casos de Negocio\NUsuario.cs" />
+    <Compile Include="Casos de Negocio\NValoracion.cs" />
     <Compile Include="IMaintanable.cs" />
     <Compile Include="MainNegocioModel.cs" />
-    <Compile Include="Operatividad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SessionManager.cs" />
     <Compile Include="UserManager.cs" />

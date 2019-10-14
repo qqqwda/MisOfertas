@@ -8,31 +8,30 @@ using System.Threading.Tasks;
 
 namespace MisOfertas.CapaNegocio.Casos_de_Negocio
 {
-    public class NUsuario : IMaintanable<Usuario>
+    public class NValoracion : IMaintanable<Valoracion>
     {
-
         CommonContext Bd;
-        public NUsuario()
+        public NValoracion()
         {
             Bd = new CommonContext();
         }
-        public Response<Usuario> Create(Usuario obj)
+
+        public Response<Valoracion> Create(Valoracion obj)
         {
             throw new NotImplementedException();
         }
 
-        public Response<Usuario> Delete(int id)
+        public Response<Valoracion> Delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Usuario> ToList()
+        public List<Valoracion> ToList()
         {
             throw new NotImplementedException();
         }
-        
 
-        public Response<Usuario> Update(int id, Usuario obj)
+        public Response<Valoracion> Update(int id, Valoracion obj)
         {
             throw new NotImplementedException();
         }

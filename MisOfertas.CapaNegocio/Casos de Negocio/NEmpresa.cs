@@ -16,6 +16,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
         {
             this.Bd = new CommonContext();
         }
+
         public Response<Empresa> Create(EmpresaModel empresa)
         {
             if (string.IsNullOrEmpty(empresa.Actividad))
@@ -101,9 +102,10 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
             }
         }
 
-        public Response<Empresa> Update(int id)
+
+        public Response<Empresa> Update(int id, Empresa obj)
         {
-            return new Response<Empresa> { IsSuccess = false, Message = "" };
+            throw new NotImplementedException();
         }
     }
 }

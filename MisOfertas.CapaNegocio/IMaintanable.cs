@@ -12,7 +12,7 @@ namespace MisOfertas.CapaNegocio
         Response<T> Create(T obj);
         List<T> ToList();
 
-        Response<T> Update(int id);
+        Response<T> Update(int id, T obj);
 
         Response<T> Delete (int id);
 

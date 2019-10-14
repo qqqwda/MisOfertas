@@ -22,6 +22,8 @@ namespace MisOfertas.CapaDatos.Models
         public virtual ICollection<OpinionOferta> OpinionOfertas { get; set; }
         public virtual Usuario Usuario { get; set; }
 
+        public virtual ICollection<Valoracion> Valoraciones { get; set; }
+
 
     }
 }

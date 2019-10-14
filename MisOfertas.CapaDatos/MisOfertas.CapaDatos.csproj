@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="CommonContext.cs" />
     <Compile Include="JModels\EmpresaModel.cs" />
+    <Compile Include="JModels\ProductoModel.cs" />
     <Compile Include="Migrations\201910082331583_nueva.cs" />
     <Compile Include="Migrations\201910082331583_nueva.Designer.cs">
       <DependentUpon>201910082331583_nueva.cs</DependentUpon>
@@ -63,6 +64,7 @@
     <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\TipoUsuario.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\Valoracion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="User.cs" />

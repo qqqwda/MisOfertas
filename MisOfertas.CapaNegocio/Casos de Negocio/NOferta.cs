@@ -10,6 +10,11 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
 {
     public class NOferta : IMaintanable<Oferta>
     {
+        CommonContext Bd;
+        public NOferta()
+        {
+            Bd = new CommonContext();
+        }
         public Response<Oferta> Create(Oferta obj)
         {
             throw new NotImplementedException();
@@ -25,7 +30,8 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
             throw new NotImplementedException();
         }
 
-        public Response<Oferta> Update(int id)
+        
+        public Response<Oferta> Update(int id, Oferta obj)
         {
             throw new NotImplementedException();
         }

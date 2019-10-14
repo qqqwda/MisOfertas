@@ -35,7 +35,9 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
 
         }
 
-        public Response<Categoria> Update(int id)
+       
+
+        public Response<Categoria> Update(int id, Categoria obj)
         {
             throw new NotImplementedException();
         }

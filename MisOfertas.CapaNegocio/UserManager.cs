@@ -76,11 +76,11 @@ namespace MisOfertas.CapaNegocio
         {
             return CommonContext.GetInstance().Users.ToList();
         }
+        
 
-        public Response<User> Update(int id)
+        public Response<User> Update(int id, User obj)
         {
             throw new NotImplementedException();
         }
-        
     }
 }

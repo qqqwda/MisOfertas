@@ -75,8 +75,9 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
                 return null;
             }
         }
+        
 
-        public Response<Local> Update(int id)
+        public Response<Local> Update(int id, Local obj)
         {
             throw new NotImplementedException();
         }
