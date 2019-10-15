@@ -48,5 +48,16 @@ namespace MisOfertas.API.Controllers
 
             return BadRequest(response.Message);
         }
+        
+        public IHttpActionResult Put(int id, [FromBody] EmpresaModel empresa)
+        {
+            var response = Negocio.Update(id,empresa);
+            if (response.IsSuccess)
+            {
+                return Ok(response.Message);
+            }
+
+            return BadRequest(response.Message);
+        }
     }
 }

@@ -103,6 +103,35 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
         }
 
 
+        public Response<Empresa> Update(Empresa obj)
+        {
+            throw new NotImplementedException();
+        }
+        public Response<Empresa> Update(int id,EmpresaModel empresa)
+        {
+            try
+            {
+                var emp = Bd.Empresas.First(e => e.IdEmpresa == id);
+
+                emp.Actividad = empresa.Actividad;
+                emp.Comuna = empresa.Comuna;
+                emp.Direccion = empresa.Direccion;
+                emp.Telefono = empresa.Telefono;
+                emp.Rut = empresa.Rut;
+                emp.Region = empresa.Region;
+                emp.Nombre = empresa.Nombre;
+                Bd.SaveChanges();
+
+                return new Response<Empresa> { Answer=emp,IsSuccess=true, Message="Usuario actualizado correctamente" };
+
+            }
+            catch (Exception ex)
+            {
+
+                return new Response<Empresa> { Answer = null, IsSuccess = false, Message = ex.ToString() };
+            }
+        }
+
         public Response<Empresa> Update(int id, Empresa obj)
         {
             throw new NotImplementedException();
