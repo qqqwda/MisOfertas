@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Casos de Negocio Web\Helper\EmailHelper.cs" />
+    <Compile Include="Casos de Negocio Web\NUsuario.cs" />
     <Compile Include="Casos de Negocio\MainCasosNegocio.cs" />
     <Compile Include="Casos de Negocio\NCategoria.cs" />
     <Compile Include="Casos de Negocio\NEmpresa.cs" />
@@ -73,8 +75,6 @@
       <Name>MisOfertas.CapaDatos</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Casos de Negocio Web\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

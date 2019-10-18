@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MisOfertas.CapaDatos;
+using MisOfertas.CapaNegocio.Casos_de_Negocio_Web;
+using System;
 using System.Web.UI;
 
 namespace MisOfertas.WEB
@@ -17,19 +19,18 @@ namespace MisOfertas.WEB
         {
             if (txtCorreo.Text != string.Empty && txtPass.Text != string.Empty)
             {
-                //us oUsuario = T001_UsuarioBLL.ValidarUsuario(int.Parse(txtRut.Text), txtPass.Text);
+                NUsuario negocio = new NUsuario();
 
-                //if (oUsuario != null)
-                //{
+                UserLoginRequest request = new UserLoginRequest();
+                request.Email = txtCorreo.Text;
+                request.Password = txtPass.Text;
 
-                //    Session["Usuario"] = oUsuario;
-                //    Response.Redirect("Default.aspx");
-
-                //}
-                //else
-                //{
-                //    ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), Guid.NewGuid().ToString(), "alert('Rut o Contraseña incorrecta')", true);
-                //}
+                var response = negocio.Login(request);
+                if (response.IsSuccess)
+                {
+                    ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), Guid.NewGuid().ToString(), "alert('"+response.Message+"')", true);
+                }
+                
             }
             else
             {
