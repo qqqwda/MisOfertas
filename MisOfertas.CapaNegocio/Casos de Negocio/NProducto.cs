@@ -106,7 +106,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
                 Stock = producto.Stock,
                 Marca = producto.Marca,
                 Modelo = producto.Modelo,
-                Nombre = producto.Modelo,
+                Nombre = producto.Nombre,
                 Temporada = producto.Temporada,
                 PrecioNormal = producto.PrecioNormal
 

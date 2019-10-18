@@ -80,6 +80,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
             {
                 var empresa = this.Bd.Empresas.FirstOrDefault(e => e.IdEmpresa == id);
                 this.Bd.Empresas.Remove(empresa);
+                this.Bd.SaveChanges();
                 return new Response<Empresa> { IsSuccess= true, Answer = empresa, Message="Empresa eliminada"};
             }
             catch (Exception)
