@@ -45,10 +45,12 @@
 					<div class="col-md-12">
 						<div class="newsletter">
 							<p>Suscribase a nuestra pagina MisOfertas <strong> LO MEJOR EN OFERTAS</strong></p>
-							<form>
-								<input class="input" type="email" placeholder="Ingresa tu correo">
-								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribete</button>
-							</form>
+							<%--<form>--%>
+								
+                                 <asp:TextBox ID="txtCorreo"   CssClass="input" placeholder="Ingresa Tu Correo"    runat="server"></asp:TextBox>
+								<%--<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribete</button>--%>
+                                <asp:Button ID="btnSuscribir" CssClass="newsletter-btn"  runat="server" Text="Suscribete" OnClick="btnSuscribir_Click" />
+							<%--</form>--%>
 							<ul class="newsletter-follow">
 								<li>
 									<a href="#"><i class="fa fa-facebook"></i></a>
