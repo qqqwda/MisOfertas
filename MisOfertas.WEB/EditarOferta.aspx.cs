@@ -23,6 +23,7 @@ namespace MisOfertas.WEB
                 intId = int.Parse(id);
                 CargarDatos(id);
                 NOferta noferta = new NOferta();
+                //este wn del crostopher es entero weon
             }
             
         }
