@@ -98,8 +98,8 @@
     <Content Include="fontsLogin\iconic\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\slick.svg" />
-    <Content Include="HomeEncargado.aspx" />
     <Content Include="HomeGerente.aspx" />
+    <Content Include="HomeEncargado.aspx" />
     <Content Include="imagesLogin\bg-01.jpg" />
     <Content Include="imagesLogin\icons\favicon.ico" />
     <Content Include="Img\bg_login.jpg" />
@@ -1792,19 +1792,19 @@
     <Compile Include="EditarOferta.aspx.designer.cs">
       <DependentUpon>EditarOferta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="HomeEncargado.aspx.cs">
-      <DependentUpon>HomeEncargado.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="HomeEncargado.aspx.designer.cs">
-      <DependentUpon>HomeEncargado.aspx</DependentUpon>
-    </Compile>
     <Compile Include="HomeGerente.aspx.cs">
       <DependentUpon>HomeGerente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="HomeGerente.aspx.designer.cs">
       <DependentUpon>HomeGerente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeEncargado.aspx.cs">
+      <DependentUpon>HomeEncargado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeEncargado.aspx.designer.cs">
+      <DependentUpon>HomeEncargado.aspx</DependentUpon>
     </Compile>
     <Compile Include="INICIO.aspx.cs">
       <DependentUpon>INICIO.aspx</DependentUpon>

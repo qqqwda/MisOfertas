@@ -1,6 +1,7 @@
 ﻿using MisOfertas.CapaDatos.JModels;
 using MisOfertas.CapaDatos.Models;
 using MisOfertas.CapaNegocio.Casos_de_Negocio;
+using MisOfertas.CapaNegocio.Casos_de_Negocio_Web.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,12 @@ namespace MisOfertas.WEB
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            var sesion = (Usuario)Session["usuario"];
+            if (sesion.TipoUsuario.IdTipoUsuario != 3)
+            {
+                Response.Redirect("Inicio.aspx");
+            }
+            
 
             NProducto negocioProducto = new NProducto();
             ddlProducto.DataSource = negocioProducto.ToListModel();
