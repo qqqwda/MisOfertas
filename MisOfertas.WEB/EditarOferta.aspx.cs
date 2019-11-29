@@ -23,7 +23,7 @@ namespace MisOfertas.WEB
                 intId = int.Parse(id);
                 CargarDatos(id);
                 NOferta noferta = new NOferta();
-                
+                //chupalo dani vidal
             }
             
         }
