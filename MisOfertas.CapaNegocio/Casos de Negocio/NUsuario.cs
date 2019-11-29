@@ -144,9 +144,56 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
         }
         
 
-        public Response<Usuario> Update(int id, Usuario obj)
+        public Response<Usuario> Update(int id, UsuarioModel usuario)
         {
-            throw new NotImplementedException();
+
+            if (string.IsNullOrEmpty(usuario.Rut))
+            {
+                return new Response<Usuario> { IsSuccess = false, Answer = null, Message = "El Rut no puede estar vacio" };
+            }
+
+            if (string.IsNullOrEmpty(usuario.Nombre))
+            {
+                return new Response<Usuario> { IsSuccess = false, Answer = null, Message = "El Nombre no puede estar vacio" };
+            }
+
+            if (string.IsNullOrEmpty(usuario.Apellido))
+            {
+                return new Response<Usuario> { IsSuccess = false, Answer = null, Message = "El Apellido no puede estar vacio" };
+            }
+
+            if (string.IsNullOrEmpty(usuario.Correo))
+            {
+                return new Response<Usuario> { IsSuccess = false, Answer = null, Message = "El Correo no puede estar vacio" };
+            }
+
+            if (string.IsNullOrEmpty(usuario.Correo))
+            {
+                return new Response<Usuario> { IsSuccess = false, Answer = null, Message = "El Apellido no puede estar vacio" };
+            }
+
+            if (string.IsNullOrEmpty(usuario.Telefono.ToString()))
+            {
+                return new Response<Usuario> { IsSuccess = false, Answer = null, Message = "El Telefono no puede estar vacio" };
+            }
+
+            if (string.IsNullOrEmpty(usuario.Password))
+            {
+                return new Response<Usuario> { IsSuccess = false, Answer = null, Message = "La Password no puede estar vacio" };
+            }
+
+
+            if (usuario.IdEmpresa== 0)
+            {
+                return new Response<Usuario> { IsSuccess = false, Answer = null, Message = "No pertenece a empresa" };
+            }
+
+            Bd.Database.ExecuteSqlCommand(string.Format("UPDATE usuario SET rut = '{0}', nombre = '{1}', apellido = '{2}',  correo = '{3}', telefono = '{4}', fechaNacimiento = {5}, tipoUsuario_idTipoUsuario = '{6}', password = '{7}', comuna = '{8}', suscrito = '{9}', puntos = '{10}', Empresa_idEmpresa = '{11}' WHERE idUsuario = '{12}'", 
+                                                         usuario.Rut, usuario.Nombre, usuario.Apellido, usuario.Correo, usuario.Telefono, usuario.FechaNacimiento, usuario.IdTipoUsuario, usuario.Password, usuario.Comuna, usuario.Suscrito, usuario.Puntos, usuario.IdEmpresa, id));
+            Bd.SaveChanges();
+
+            return new Response<Usuario> { IsSuccess = true, Answer = null, Message = "Producto actualizado" };
+
         }
         
 
@@ -200,5 +247,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
             return Convert.ToBase64String(ArrayResultado,
             0, ArrayResultado.Length);
         }
+
+        
     }
 }
