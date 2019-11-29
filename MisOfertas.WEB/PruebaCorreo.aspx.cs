@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Net;
 using System.Net.Mail;
 
@@ -23,9 +18,9 @@ namespace MisOfertas.WEB
         {
             if (txtAsunto.Text != string.Empty && txtCuerpo.Text != string.Empty)
             {
-                EnviarCorreo(txtAsunto.Text,txtCuerpo.Text, "cristopher.e.rivera@gmail.com");
+                EnviarCorreo(txtAsunto.Text, txtCuerpo.Text, "cristopher.e.rivera@gmail.com");
             }
-            
+
         }
 
         private void EnviarCorreo(string asunto, string cuerpo, string correo)
@@ -52,7 +47,7 @@ namespace MisOfertas.WEB
                 //}
 
                 correos.From = new MailAddress("ofertas.portafolio@gmail.com");
-                envios.Credentials = new NetworkCredential("ofertas.portafolio@gmail.com","ofertas123");
+                envios.Credentials = new NetworkCredential("ofertas.portafolio@gmail.com", "ofertas123");
 
                 //Datos importantes no modificables para tener acceso a las cuentas
 
@@ -61,13 +56,13 @@ namespace MisOfertas.WEB
                 envios.EnableSsl = true;
 
                 envios.Send(correos);
-             
+
             }
             catch (Exception ex)
             {
-                
+
             }
         }
     }
-    
+
 }

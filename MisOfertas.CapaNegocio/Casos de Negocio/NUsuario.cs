@@ -4,6 +4,7 @@ using MisOfertas.CapaDatos.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,13 +36,28 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
             {
                 return new Response<Usuario> { Answer = null, IsSuccess = false, Message = "Campo 'correo' vacío" };
             }
-            if (string.IsNullOrEmpty(usuario.Correo))
+            if (string.IsNullOrEmpty(usuario.Password))
             {
-                return new Response<Usuario> { Answer = null, IsSuccess = false, Message = "Campo 'correo' vacío" };
+                return new Response<Usuario> { Answer = null, IsSuccess = false, Message = "Campo 'usuario' vacío" };
             }
 
-            return new Response<Usuario> { Answer = null, IsSuccess = false, Message = "Campo apellido vacío" };
 
+
+            usuario.Password = Encriptar(usuario.Password); //encriptar contra en la base de datos
+
+
+            //UsuarioModel us = new UsuarioModel();
+            // var resultado = us.Create(usuario);
+
+
+            usuario.Puntos = 0;
+            // para q se cree en valores cero para NUEVOS USUARIO CLIENTE
+
+            Bd.Database.ExecuteSqlCommand("INSERT INTO Usuarios(Rut, Nombre, Apellido, Correo, Telefono, FechaNacimiento, TipoUsuario_IdTipoUsuario, Password, Suscrito, Puntos, Empresa_IdEmpresa, Comuna) VALUES({0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11})"
+               , usuario.Rut, usuario.Nombre, usuario.Apellido, usuario.Correo, usuario.Telefono, usuario.FechaNacimiento, 2, usuario.Password, usuario.Suscrito, usuario.Puntos, null, usuario.Comuna);
+            Bd.SaveChanges();
+
+            return new Response<Usuario> { Answer = null, IsSuccess = true, Message = "Usuario Creado Correctamente" };
         }
 
 
@@ -72,10 +88,10 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
             {
                 return new Response<Usuario> { Answer = null, IsSuccess = false, Message = "Campo 'nombre' vacío" };
             }
-            if (string.IsNullOrEmpty(usuario.FechaNacimiento.ToString()))
-            {
-                return new Response<Usuario> { Answer = null, IsSuccess = false, Message = "Campo 'Fecha nacimiento' vacío" };
-            }
+            //if (string.IsNullOrEmpty(usuario.FechaNacimiento.ToString()))
+            //{
+            //    return new Response<Usuario> { Answer = null, IsSuccess = false, Message = "Campo 'Fecha nacimiento' vacío" };
+            //}
             if (string.IsNullOrEmpty(usuario.Password))
             {
                 return new Response<Usuario> { Answer = null, IsSuccess = false, Message = "Campo 'usuario' vacío" };
@@ -131,6 +147,58 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
         public Response<Usuario> Update(int id, Usuario obj)
         {
             throw new NotImplementedException();
+        }
+        
+
+
+        public string Encriptar(string texto)
+        {
+
+            string key = "mikey";
+
+
+            //arreglo de bytes donde guardaremos la llave
+            byte[] keyArray;
+            //arreglo de bytes donde guardaremos el texto
+            //que vamos a encriptar
+            byte[] Arreglo_a_Cifrar =
+            UTF8Encoding.UTF8.GetBytes(texto);
+
+            //se utilizan las clases de encriptación
+            //provistas por el Framework
+            //Algoritmo MD5
+            MD5CryptoServiceProvider hashmd5 =
+            new MD5CryptoServiceProvider();
+            //se guarda la llave para que se le realice
+            //hashing
+            keyArray = hashmd5.ComputeHash(
+            UTF8Encoding.UTF8.GetBytes(key));
+
+            hashmd5.Clear();
+
+            //Algoritmo 3DAS
+            TripleDESCryptoServiceProvider tdes =
+            new TripleDESCryptoServiceProvider();
+
+            tdes.Key = keyArray;
+            tdes.Mode = CipherMode.ECB;
+            tdes.Padding = PaddingMode.PKCS7;
+
+            //se empieza con la transformación de la cadena
+            ICryptoTransform cTransform =
+            tdes.CreateEncryptor();
+
+            //arreglo de bytes donde se guarda la
+            //cadena cifrada
+            byte[] ArrayResultado =
+            cTransform.TransformFinalBlock(Arreglo_a_Cifrar,
+            0, Arreglo_a_Cifrar.Length);
+
+            tdes.Clear();
+
+            //se regresa el resultado en forma de una cadena
+            return Convert.ToBase64String(ArrayResultado,
+            0, ArrayResultado.Length);
         }
     }
 }

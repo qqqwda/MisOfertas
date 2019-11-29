@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Ayuda.aspx.cs" Inherits="MisOfertas.WEB.Ayuda" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 
     <!-- VISTA WEB -->
 		<div id="breadcrumb" class="section">
@@ -27,6 +27,25 @@
 		<div class="section">
 			<!-- container -->
 			<div class="container">
+                	<div class="txt1 text-center p-t-54 p-b-20">
+						<span>
+							Visite Nuestras Redes Sociales
+						</span>
+					</div>
+
+					<div class="flex-c-m">
+						<a href="#" class="login100-social-item bg1">
+							<i class="fa fa-facebook"></i>
+						</a>
+
+						<a href="#" class="login100-social-item bg2">
+							<i class="fa fa-twitter"></i>
+						</a>
+
+						<a href="#" class="login100-social-item bg3">
+							<i class="fa fa-google"></i>
+						</a>
+					</div>
 				<!-- row -->
 				<div class="row">
 				</div>
@@ -36,43 +55,7 @@
 		</div>
 		<!-- /SECTION -->
 
-		<!-- SUBCRIPCION -->
-		<div id="newsletter" class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="newsletter">
-							<p>Suscribase a nuestra pagina MisOfertas <strong> LO MEJOR EN OFERTAS</strong></p>
-							<%--<form>--%>
-								
-                                 <asp:TextBox ID="txtCorreo"   CssClass="input" placeholder="Ingresa Tu Correo"    runat="server"></asp:TextBox>
-								<%--<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribete</button>--%>
-                                <asp:Button ID="btnSuscribir" CssClass="newsletter-btn"  runat="server" Text="Suscribete" OnClick="btnSuscribir_Click" />
-							<%--</form>--%>
-							<ul class="newsletter-follow">
-								<li>
-									<a href="#"><i class="fa fa-facebook"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-instagram"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-pinterest"></i></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-    <!-- VISTA WEB -->
+	
 
 
 

@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="OfertasProductos.aspx.cs" Inherits="MisOfertas.WEB.OfertasProductos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 
     <!-- BREADCRUMB -->
 		<div id="breadcrumb" class="section">
@@ -505,41 +505,6 @@
 		</div>
 		<!-- /Section -->
 
-		<!--SUBCRIPCION-->
-		<div id="newsletter" class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="newsletter">
-							<p>uscribase a nuestra pagina MisOfertas <strong> LO MEJOR EN OFERTAS</</strong></p>
-							<form>
-								<input class="input" type="email" placeholder="Ingresa tu correo">
-								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribete a nuestras ofertas</button>
-							</form>
-							<ul class="newsletter-follow">
-								<li>
-									<a href="#"><i class="fa fa-facebook"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-instagram"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-pinterest"></i></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /NEWSLETTER -->
 
     <!-- jQuery Plugins -->
 		<script src="js/jquery.min.js"></script>

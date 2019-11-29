@@ -23,24 +23,36 @@
     <!--script-->
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
+        <!--SWEETALERTS-->
+  
+   
+    <link href="css/sweetalert.css" rel="stylesheet" />
+    <script src="js/sweetalert.min.js" type="text/javascript"></script>
+   
+
+   
 
 </head>
 <body>
+    <script>  function myfunction() {
+
+        }</script>
 
     <!-- HEADER -->
 		<header>
-			<!-- AGREGAR ASPX -->
+			<!-- AGREGAR ASPX para redireccionar-->
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> 56+946311243</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> MisOfertas@gmail.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Casa Central Providencia</a></li>
+						<li><a runat="server" id="liCelular" href="#"><i class="fa fa-phone"></i></a></li>
+						<li><a runat="server" id="liCorreo" href="#"><i class="fa fa-envelope-o"></i> </a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Casa Central DUOC UC MisOfertas</a></li>
 					</ul>
 					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> CLP</a></li>
-						<li><a href="Login.aspx"><i class="fa fa-user-o"></i> MI SESION</a></li>
+						<li><a href="RegistrarUser.aspx"><i class="fa-times-rectangle"></i> Registrarse</a></li>
+						<li><a runat="server" id="liInicioSesion" href="Login.aspx"><i class="fa fa-user-o"></i> Iniciar SESION MisOfertas</a></li>
 					</ul>
 				</div>
 			</div>
@@ -87,16 +99,16 @@
 									<a href="#">
 										<i class="fa fa-heart-o"></i>
 										<span>Tus Favoritos</span>
-										<div class="qty">2</div>
+										<div class="qty">12</div>
 									</a>
 								</div>
 								<!-- /Wishlist -->
 
 								<!-- Cart -->
-								<div class="dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+							<div>
+									<a href="#">
 										<i class="fa fa-shopping-cart"></i>
-										<span>Tus Compras</span>
+										<span>Tus Productos</span>
 										<div class="qty">3</div>
 									</a>
 									<div class="cart-dropdown">
@@ -124,7 +136,7 @@
 											</div>
 										</div>
 										<div class="cart-summary">
-											<small>3 Item(s) selected</small>
+											<small>3 Producto(s) seleccionados</small>
 											<h5>SUBTOTAL: $2940.00</h5>
 										</div>
 										<div class="cart-btns">
@@ -182,13 +194,61 @@
 		</nav>
 		<!-- /NAVIGATION -->
 
+        <form id="form1" runat="server">
 
+      <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+    </asp:ContentPlaceHolder>
+  
+     
+        <div> 
+          
+             <!-- SUBCRIPCION -->
+		<div id="newsletter" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="newsletter">
+							<p>Suscribase a nuestra pagina MisOfertas <strong> LO MEJOR EN OFERTAS Todas las Marcas/Modelos/Diseños</strong></p>
+								
+                                 <asp:TextBox ID="txtCorreo"   CssClass="input" placeholder="Ingresa Tu Correo Para Suscribirte A Mis Ofertas"  runat="server" ToolTip="Ingrese su correito" ></asp:TextBox>
+								<%--<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribete</button>--%>
+                                <asp:Button BorderColor="Red"   ID="btnSuscribir" CssClass="newsletter-btn"  runat="server"  Text="Suscribete" OnClick="btnSuscribir_Click" Height="49px" Width="121px" />
+					
+							<ul class="newsletter-follow">
+								<li>
+									<a href="#"><i class="fa fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-pinterest"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
 
-    <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+            <!-- jQuery Plugins -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/slick.min.js"></script>
+		<script src="js/nouislider.min.js"></script>
+		<script src="js/jquery.zoom.min.js"></script>
+		<script src="js/main.js"></script>
+    <!-- SUBCRIPCION -->
+             
         </div>
-    </form>
+   </form>  
+            
 </body>
 </html>

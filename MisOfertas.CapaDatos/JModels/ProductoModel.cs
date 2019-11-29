@@ -20,5 +20,6 @@ namespace MisOfertas.CapaDatos.JModels
         public string Temporada { get; set; }
         public int IdEmpresa { get; set; }
         public int IdCategoria { get; set; }
+        
     }
 }

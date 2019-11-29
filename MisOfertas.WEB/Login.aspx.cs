@@ -15,6 +15,10 @@ namespace MisOfertas.WEB
             }
         }
 
+        
+
+        
+
         protected void btnEntrar_Click(object sender, EventArgs e)
         {
             if (txtCorreo.Text != string.Empty && txtPass.Text != string.Empty)
@@ -22,20 +26,36 @@ namespace MisOfertas.WEB
                 NUsuario negocio = new NUsuario();
 
                 UserLoginRequest request = new UserLoginRequest();
+
                 request.Email = txtCorreo.Text;
                 request.Password = txtPass.Text;
 
-                var response = negocio.Login(request);
-                if (response.IsSuccess)
+                var responseAux = negocio.Login(request);
+                if (responseAux.IsSuccess)
                 {
-                    ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), Guid.NewGuid().ToString(), "alert('"+response.Message+"')", true);
+
+                    var objUsuario = negocio.Traer(txtCorreo.Text);
+                    Session["usuario"] = objUsuario;
+                    Response.Redirect("INICIO.aspx");
+
+                    ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), Guid.NewGuid().ToString(), "alert('" + responseAux.Message + "')", true);
                 }
-                
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), Guid.NewGuid().ToString(), "alert('Usuario O Contraseña incorrectos')", true);
+                }
+
             }
             else
             {
-                ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), Guid.NewGuid().ToString(), "alert('Ingresar datos,estan vacios')", true);
+                ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), Guid.NewGuid().ToString(), "alert('Ingrese datos,estan vacios')", true);
             }
         }
+
+        //protected void BtnVolver_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    Response.Redirect("OfertasHot.aspx");
+        //}
     }
 }
+    

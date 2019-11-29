@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="INICIO.aspx.cs" Inherits="MisOfertas.WEB.INICIO" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 
 
 
@@ -29,7 +29,7 @@
 					</div>
 					<!-- /section title -->
 
-					<!-- Products tab & slick -->
+					<!-- BARRA DE PRODUCTO DESLIZANTE -->
 					<div class="col-md-12">
 						<div class="row">
 							<div class="products-tabs">
@@ -63,7 +63,7 @@
 												</div>
 											</div>
 											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Agregar Producto</button>
 											</div>
 										</div>
 										<!-- /product -->
@@ -94,7 +94,7 @@
 												</div>
 											</div>
 											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Agregar Producto</button>
 											</div>
 										</div>
 										<!-- /product -->
@@ -120,7 +120,7 @@
 												</div>
 											</div>
 											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Agregar Producto</button>
 											</div>
 										</div>
 										<!-- /product -->
@@ -148,7 +148,7 @@
 												</div>
 											</div>
 											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Agregar Producto</button>
 											</div>
 										</div>
 										<!-- /product -->
@@ -176,7 +176,7 @@
 												</div>
 											</div>
 											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>Agregar Producto</button>
 											</div>
 										</div>
 										<!-- /product -->
@@ -187,7 +187,7 @@
 							</div>
 						</div>
 					</div>
-					<!-- /Products tab & slick -->
+					<!-- /BARRA DE PRODUCTO DESLIZANTE -->
 				</div>
 				<!-- /row -->
 			</div>
@@ -296,7 +296,7 @@
 
 					<div class="col-md-4 col-xs-6">
 						<div class="section-title">
-							<h4 class="title">Top selling</h4>
+							<h4 class="title">Mejores Ofertas</h4>
 							<div class="section-nav">
 								<div id="slick-nav-4" class="products-slick-nav"></div>
 							</div>

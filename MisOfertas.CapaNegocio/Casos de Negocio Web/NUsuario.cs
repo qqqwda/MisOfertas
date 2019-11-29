@@ -4,6 +4,7 @@ using MisOfertas.CapaDatos.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,17 +22,40 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio_Web
         {
             try
             {
-                 var response = Bd.Usuarios.FirstOrDefault(u => u.Correo == user.Email && u.Password == user.Password);
-                if(response != null)
+                var objUsuario = Bd.Usuarios.FirstOrDefault(u => u.Correo == user.Email);
+
+                if (objUsuario != null)
                 {
-                    return new Response<Usuario> { Answer = response, IsSuccess = true, Message = "Bienvenido "+response.Nombre };
+                    if (user.Password == Desencriptar(objUsuario.Password))
+                    {
+                        return new Response<Usuario> { Answer = objUsuario, IsSuccess = true, Message = "Bienvenido " + objUsuario.Nombre };
+                    }
+                    else
+                    {
+                        return new Response<Usuario>
+                        {
+                            Answer = null,
+                            IsSuccess = false,
+                            Message = "Usuario y contraseña incorrecta"
+                        };
+                    }
                 }
-                return new Response<Usuario>
+                else
                 {
-                    Answer = null,
-                    IsSuccess = false,
-                    Message = "Fallo al tratar de loguearse, verifique su correo y contraseña"
-                };
+                    return new Response<Usuario>
+                    {
+                        Answer = null,
+                        IsSuccess = false,
+                        Message = "Fallo al tratar de loguearse, verifique su correo y contraseña"
+                    };
+                }
+                /*   user.Password = Desencriptar(user.Password);*/ // DESENCRIPTAR LA CONTRA EN LA BASE DE DATOS PARA INICIAR SESION
+                                                                    //
+                                                                    //REVISAR EL DESENCRIPTAR NO ME LOGEA
+
+                //var response = Bd.Usuarios.FirstOrDefault(u => u.Correo == user.Email && u.Password == user.Password);
+                
+
             }
             catch (Exception ex)
             {
@@ -43,6 +67,14 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio_Web
                     Message = "Error: " + ex.Message
                 };
             }
+            
+
+        }
+
+        public Usuario Traer(string correo)
+        {
+
+            return Bd.Usuarios.Where(x => x.Correo == correo).FirstOrDefault();
         }
 
         public Response<UsuarioModel> Registrar(UsuarioModel usuario)
@@ -88,5 +120,49 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio_Web
                 };
             }
         }
+
+
+        public string Desencriptar(string textoEncriptado) //DESENCRIPTAR LA CONTRASEÑA DEL LOGIN/DEL NEGOCIO WEB 
+        {
+
+
+            string key = "mikey";
+
+            byte[] keyArray;
+            //convierte el texto en una secuencia de bytes
+            byte[] Array_a_Descifrar =
+            Convert.FromBase64String(textoEncriptado);
+
+            //se llama a las clases que tienen los algoritmos
+            //de encriptación se le aplica hashing
+            //algoritmo MD5
+            MD5CryptoServiceProvider hashmd5 =
+            new MD5CryptoServiceProvider();
+
+            keyArray = hashmd5.ComputeHash(
+            UTF8Encoding.UTF8.GetBytes(key));
+
+            hashmd5.Clear();
+
+            TripleDESCryptoServiceProvider tdes =
+            new TripleDESCryptoServiceProvider();
+
+            tdes.Key = keyArray;
+            tdes.Mode = CipherMode.ECB;
+            tdes.Padding = PaddingMode.PKCS7;
+
+            ICryptoTransform cTransform =
+            tdes.CreateDecryptor();
+
+            byte[] resultArray =
+            cTransform.TransformFinalBlock(Array_a_Descifrar,
+            0, Array_a_Descifrar.Length);
+
+            tdes.Clear();
+            //se regresa en forma de cadena
+            return UTF8Encoding.UTF8.GetString(resultArray);
+        }
+
+
     }
 }
