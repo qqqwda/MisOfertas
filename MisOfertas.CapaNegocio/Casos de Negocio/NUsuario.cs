@@ -96,16 +96,16 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
             {
                 return new Response<Usuario> { Answer = null, IsSuccess = false, Message = "Campo 'usuario' vacío" };
             }
-            if (usuario.IdEmpresa <=0)
+            if (usuario.IdEmpresa <= 0)
             {
                 return new Response<Usuario> { Answer = null, IsSuccess = false, Message = "Campo 'empresa' vacío" };
             }
-            if (usuario.IdTipoUsuario <=0)
+            if (usuario.IdTipoUsuario <= 0)
             {
                 return new Response<Usuario> { Answer = null, IsSuccess = false, Message = "Campo 'tipo usuario' vacío" };
             }
             Bd.Database.ExecuteSqlCommand("INSERT INTO Usuarios(Rut, Nombre, Apellido, Correo, Telefono, FechaNacimiento, TipoUsuario_IdTipoUsuario, Password, Suscrito, Puntos, Empresa_IdEmpresa, Comuna) VALUES({0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11})"
-                ,usuario.Rut, usuario.Nombre, usuario.Apellido, usuario.Correo, usuario.Telefono, usuario.FechaNacimiento, usuario.IdTipoUsuario, usuario.Password, usuario.Suscrito, usuario.Puntos, usuario.IdEmpresa, usuario.Comuna);
+                , usuario.Rut, usuario.Nombre, usuario.Apellido, usuario.Correo, usuario.Telefono, usuario.FechaNacimiento, usuario.IdTipoUsuario, usuario.Password, usuario.Suscrito, usuario.Puntos, usuario.IdEmpresa, usuario.Comuna);
             Bd.SaveChanges();
             return new Response<Usuario> { Answer = null, IsSuccess = true, Message = "Usuario creado correctamente" };
 
@@ -142,7 +142,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
         {
             return Bd.Usuarios.ToList();
         }
-        
+
 
         public Response<Usuario> Update(int id, UsuarioModel usuario)
         {
@@ -183,19 +183,19 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
             }
 
 
-            if (usuario.IdEmpresa== 0)
+            if (usuario.IdEmpresa == 0)
             {
                 return new Response<Usuario> { IsSuccess = false, Answer = null, Message = "No pertenece a empresa" };
             }
 
-            Bd.Database.ExecuteSqlCommand(string.Format("UPDATE usuario SET rut = '{0}', nombre = '{1}', apellido = '{2}',  correo = '{3}', telefono = '{4}', fechaNacimiento = {5}, tipoUsuario_idTipoUsuario = '{6}', password = '{7}', comuna = '{8}', suscrito = '{9}', puntos = '{10}', Empresa_idEmpresa = '{11}' WHERE idUsuario = '{12}'", 
+            Bd.Database.ExecuteSqlCommand(string.Format("UPDATE usuario SET rut = '{0}', nombre = '{1}', apellido = '{2}',  correo = '{3}', telefono = '{4}', fechaNacimiento = {5}, tipoUsuario_idTipoUsuario = '{6}', password = '{7}', comuna = '{8}', suscrito = '{9}', puntos = '{10}', Empresa_idEmpresa = '{11}' WHERE idUsuario = '{12}'",
                                                          usuario.Rut, usuario.Nombre, usuario.Apellido, usuario.Correo, usuario.Telefono, usuario.FechaNacimiento, usuario.IdTipoUsuario, usuario.Password, usuario.Comuna, usuario.Suscrito, usuario.Puntos, usuario.IdEmpresa, id));
             Bd.SaveChanges();
 
             return new Response<Usuario> { IsSuccess = true, Answer = null, Message = "Producto actualizado" };
 
         }
-        
+
 
 
         public string Encriptar(string texto)
@@ -248,6 +248,9 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
             0, ArrayResultado.Length);
         }
 
-        
+        public Response<Usuario> Update(int id, Usuario obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
