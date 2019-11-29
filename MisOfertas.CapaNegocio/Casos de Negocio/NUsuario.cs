@@ -54,7 +54,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
             // para q se cree en valores cero para NUEVOS USUARIO CLIENTE
 
             Bd.Database.ExecuteSqlCommand("INSERT INTO Usuarios(Rut, Nombre, Apellido, Correo, Telefono, FechaNacimiento, TipoUsuario_IdTipoUsuario, Password, Suscrito, Puntos, Empresa_IdEmpresa, Comuna) VALUES({0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11})"
-               , usuario.Rut, usuario.Nombre, usuario.Apellido, usuario.Correo, usuario.Telefono, usuario.FechaNacimiento, 2, usuario.Password, usuario.Suscrito, usuario.Puntos, null, usuario.Comuna);
+               , usuario.Rut, usuario.Nombre, usuario.Apellido, usuario.Correo, usuario.Telefono, usuario.FechaNacimiento, 3, usuario.Password, usuario.Suscrito, usuario.Puntos, null, usuario.Comuna);
             Bd.SaveChanges();
 
             return new Response<Usuario> { Answer = null, IsSuccess = true, Message = "Usuario Creado Correctamente" };

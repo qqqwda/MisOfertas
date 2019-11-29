@@ -17,6 +17,12 @@ namespace MisOfertas.WEB
         int intId;
         protected void Page_Load(object sender, EventArgs e)
         {
+            var sesion = (Usuario)Session["usuario"];
+            if (sesion.TipoUsuario.IdTipoUsuario != 3)
+            {
+                Response.Redirect("Inicio.aspx");
+            }
+
             if (!IsPostBack)
             {
                 string id = Request.QueryString["id"];
