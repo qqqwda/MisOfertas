@@ -188,7 +188,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
                 return new Response<Usuario> { IsSuccess = false, Answer = null, Message = "No pertenece a empresa" };
             }
 
-            Bd.Database.ExecuteSqlCommand(string.Format("UPDATE usuario SET rut = '{0}', nombre = '{1}', apellido = '{2}',  correo = '{3}', telefono = '{4}', fechaNacimiento = {5}, tipoUsuario_idTipoUsuario = '{6}', password = '{7}', comuna = '{8}', suscrito = '{9}', puntos = '{10}', Empresa_idEmpresa = '{11}' WHERE idUsuario = '{12}'",
+            Bd.Database.ExecuteSqlCommand(string.Format("UPDATE Usuarios SET Rut = '{0}', Nombre = '{1}', Apellido = '{2}',  Correo = '{3}', Telefono = '{4}', FechaNacimiento = '{5}', TipoUsuario_IdTipoUsuario = '{6}', Password = '{7}', Comuna = '{8}', Suscrito = '{9}', Puntos = '{10}', Empresa_IdEmpresa = '{11}' WHERE IdUsuario = '{12}'",
                                                          usuario.Rut, usuario.Nombre, usuario.Apellido, usuario.Correo, usuario.Telefono, usuario.FechaNacimiento, usuario.IdTipoUsuario, usuario.Password, usuario.Comuna, usuario.Suscrito, usuario.Puntos, usuario.IdEmpresa, id));
             Bd.SaveChanges();
 
