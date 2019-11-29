@@ -32,6 +32,18 @@ namespace MisOfertas.WEB
 
             GvOfertas.DataSource = listaOfertas;
             GvOfertas.DataBind();
+
+            NOferta negocioOferta = new NOferta();
+            ddlOferta.DataSource = negocioOferta.ToList();
+
+            ddlOferta.Items.Add(new ListItem("Seleccione Un Producto a editar", "0"));
+
+            foreach (var item in negocioOferta.ToList())
+            {
+                ListItem i = new ListItem(item.Descripcion, item.IdOferta.ToString());
+                ddlOferta.Items.Add(i);
+
+            }
         }
 
         protected void BtnExportarExcel_Click(object sender, ImageClickEventArgs e)
@@ -127,10 +139,33 @@ namespace MisOfertas.WEB
             }
         }
 
+        protected void editarOferta_Click(object sender, EventArgs e)
+        {
+            
+        }
 
+        protected void btnEliminar_Command(object sender, CommandEventArgs e)
+        {
+            int id = int.Parse(e.CommandArgument.ToString());
+            NOferta noferta = new NOferta();
+            noferta.Delete(id);
+            Response.Redirect("HomeGerente.aspx");
+        }
 
+        protected void btneditar_Command(object sender, CommandEventArgs e)
+        {
+            int id = int.Parse(e.CommandArgument.ToString());
+            Response.Redirect("EditarOferta.aspx?id=" + id);
+        }
 
+        protected void GvOfertas_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
 
+        }
 
+        protected void GvOfertas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

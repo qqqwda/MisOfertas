@@ -88,6 +88,7 @@
     <Content Include="css\slick.css" />
     <Content Include="css\style.css" />
     <Content Include="css\sweetalert.css" />
+    <Content Include="EditarOferta.aspx" />
     <Content Include="fontsLogin\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="fontsLogin\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="fontsLogin\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
@@ -1783,6 +1784,13 @@
     </Compile>
     <Compile Include="CrearOferta.aspx.designer.cs">
       <DependentUpon>CrearOferta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarOferta.aspx.cs">
+      <DependentUpon>EditarOferta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarOferta.aspx.designer.cs">
+      <DependentUpon>EditarOferta.aspx</DependentUpon>
     </Compile>
     <Compile Include="HomeEncargado.aspx.cs">
       <DependentUpon>HomeEncargado.aspx</DependentUpon>

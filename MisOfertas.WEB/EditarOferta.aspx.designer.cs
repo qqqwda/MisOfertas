@@ -10,96 +10,96 @@
 namespace MisOfertas.WEB {
     
     
-    public partial class HomeGerente {
+    public partial class EditarOferta {
         
         /// <summary>
-        /// BtnExportarExcel control.
+        /// ddlProducto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton BtnExportarExcel;
+        protected global::System.Web.UI.WebControls.DropDownList ddlProducto;
         
         /// <summary>
-        /// btntxt control.
+        /// txtcompraMin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btntxt;
+        protected global::System.Web.UI.WebControls.TextBox txtcompraMin;
         
         /// <summary>
-        /// ddlOferta control.
+        /// txtCompraMax control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlOferta;
+        protected global::System.Web.UI.WebControls.TextBox txtCompraMax;
         
         /// <summary>
-        /// editarOferta control.
+        /// lblFecha control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button editarOferta;
+        protected global::System.Web.UI.WebControls.Label lblFecha;
         
         /// <summary>
-        /// GvOfertas control.
+        /// txtfechaProduct control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GvOfertas;
+        protected global::System.Web.UI.WebControls.TextBox txtfechaProduct;
         
         /// <summary>
-        /// btneditar control.
+        /// txtValor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btneditar;
+        protected global::System.Web.UI.WebControls.TextBox txtValor;
         
         /// <summary>
-        /// hdfEditar control.
+        /// txtDescuento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdfEditar;
+        protected global::System.Web.UI.WebControls.TextBox txtDescuento;
         
         /// <summary>
-        /// pnlEditar control.
+        /// txtDescripcion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlEditar;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtDescripcion;
         
         /// <summary>
-        /// txteditar control.
+        /// BtnActualizarOferta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txteditar;
+        protected global::System.Web.UI.WebControls.Button BtnActualizarOferta;
         
         /// <summary>
-        /// btnGuardarEditar control.
+        /// BtnEliminarOferta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardarEditar;
+        protected global::System.Web.UI.WebControls.Button BtnEliminarOferta;
     }
 }

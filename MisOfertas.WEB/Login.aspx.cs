@@ -36,7 +36,8 @@ namespace MisOfertas.WEB
 
                     var objUsuario = negocio.Traer(txtCorreo.Text);
                     Session["usuario"] = objUsuario;
-                    Response.Redirect("INICIO.aspx");
+                    //Response.Redirect("INICIO.aspx");
+                    Response.Redirect("HomeGerente.aspx");
 
                     ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), Guid.NewGuid().ToString(), "alert('" + responseAux.Message + "')", true);
                 }

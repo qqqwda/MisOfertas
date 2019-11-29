@@ -27,7 +27,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
             {
                 return new Response<Oferta> { Answer = null, IsSuccess = false, Message = "Ingrese fecha" };
             }
-            if (string.IsNullOrEmpty(oferta.PorcentajeDescuento.ToString()) || oferta.PorcentajeDescuento < 100)
+            if (string.IsNullOrEmpty(oferta.PorcentajeDescuento.ToString()) || oferta.PorcentajeDescuento > 100)
             {
                 return new Response<Oferta> { Answer = null, IsSuccess = false, Message = "Ingrese descuento" };
             }
@@ -53,7 +53,25 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
 
         public Response<Oferta> Delete(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                try
+                {
+                    var oferta = this.Bd.Ofertas.FirstOrDefault(e => e.IdOferta == id);
+                    this.Bd.Ofertas.Remove(oferta);
+                    this.Bd.SaveChanges();
+                    return new Response<Oferta> { IsSuccess = true, Answer = oferta, Message = "oferta eliminada" };
+                }
+                catch (Exception)
+                {
+                    return new Response<Oferta> { IsSuccess = false, Answer = null, Message = "oferta no pudo ser eliminada" };
+                }
+            }
+            catch (Exception)
+            {
+
+                return new Response<Oferta> { IsSuccess = false, Answer = null, Message = "Error" };
+            }
         }
 
         public List<Oferta> ToList()
@@ -61,10 +79,61 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
             return Bd.Ofertas.ToList();
         }
 
-        public Response<Oferta> Update(int id, Oferta obj)
+        public Response<Oferta> Update(int id, Oferta oferta)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var of = Bd.Ofertas.First(e => e.IdOferta == id);
+
+                of.CompraMax = oferta.CompraMax;
+                of.CompraMin = oferta.CompraMin;
+                of.Descripcion = oferta.Descripcion;
+                of.FechaDisponibilidad = oferta.FechaDisponibilidad;
+                of.IdOferta = oferta.IdOferta;
+                of.PorcentajeDescuento = oferta.PorcentajeDescuento;
+                of.Valor = of.Valor;
+                //Bd.Database.ExecuteSqlCommand();
+
+
+                Bd.SaveChanges();
+
+                return new Response<Oferta> { IsSuccess = true, Answer = oferta, Message = "Error" };
+            }
+            catch (Exception)
+            {
+
+                return new Response<Oferta> { IsSuccess = false, Answer = null, Message = "Error" };
+            }
+
         }
+
+        public Response<OfertaModel> UpdateModel(int id, OfertaModel oferta)
+        {
+            try
+            {
+                var of = Bd.Ofertas.First(e => e.IdOferta == id);
+
+                of.CompraMax = oferta.CompraMax;
+                of.CompraMin = oferta.CompraMin;
+                of.Descripcion = oferta.Descripcion;
+                of.FechaDisponibilidad = oferta.FechaDisponibilidad;
+                of.PorcentajeDescuento = oferta.PorcentajeDescuento;
+                of.Valor = oferta.Valor;
+                
+                Bd.Database.ExecuteSqlCommand(string.Format("UPDATE Ofertas SET Producto_IdProducto ={0}",oferta.IdProducto));
+                
+                Bd.SaveChanges();
+
+                return new Response<OfertaModel> { IsSuccess = true, Answer = oferta, Message = "Error" };
+            }
+            catch (Exception)
+            {
+
+                return new Response<OfertaModel> { IsSuccess = false, Answer = null, Message = "Error" };
+            }
+
+        }
+
         public Oferta Traer(int id)
         {
             return Bd.Ofertas.Where(x => x.IdOferta == id).FirstOrDefault();

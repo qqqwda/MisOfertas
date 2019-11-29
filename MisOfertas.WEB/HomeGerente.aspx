@@ -17,8 +17,45 @@
 
                  <asp:ImageButton ID="BtnExportarExcel" runat="server" ImageUrl="~/Img/Excel.png" Height="88px" Width="94px" style="margin-left: 301px" OnClick="BtnExportarExcel_Click" />
                   <asp:ImageButton ID="btntxt" runat="server" ImageUrl="~/Img/Note.jfif" Height="88px" Width="94px" style="margin-left: 301px" OnClick="btntxt_Click" />
-            <asp:GridView ID="GvOfertas"  Width ="80%"  CssClass="table table-bordered" runat="server"  ></asp:GridView>
+                 <br />
+                 <br />
+                 <asp:DropDownList ID="ddlOferta" runat="server" Width="350">
+                 </asp:DropDownList>
+                    <asp:Button ID="editarOferta" runat="server" Text="Editar" OnClick="editarOferta_Click" />
+                 <br />
+                 <br />
+
+
+            <asp:GridView  ID="GvOfertas" runat="server" Width ="80%"  CssClass="table table-bordered"  AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="GvOfertas_PageIndexChanging" PageSize="25" OnSelectedIndexChanged="GvOfertas_SelectedIndexChanged">
+                    <Columns>
+                        <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" />
+                        <asp:BoundField DataField="CompraMin" HeaderText="Compra Minima" />
+                        <asp:BoundField DataField="CompraMax" HeaderText="Compra Maxima" />
+                        <asp:BoundField DataField="FechaDisponibilidad" HeaderText="Fecha Disponibilidad" />
+                         <asp:BoundField DataField="Valor" HeaderText="Valor $" />
+                         <asp:BoundField DataField="PorcentajeDescuento" HeaderText="Porcentaje Descuento" />
+                        <asp:TemplateField ShowHeader="False">
+                            <ItemTemplate>
+                                <asp:ImageButton ID="btneditar" runat="server" ImageUrl="https://cdn.discordapp.com/attachments/647215602452135936/649830205602529280/user_edit.png" CausesValidation="False" OnCommand="btneditar_Command" CommandArgument='<% #Eval("IdOferta")%> ' CommandName="Editar" Text="Editar" />
+                            </ItemTemplate>
+                             <ControlStyle Height="43px" Width="60px" />
+                        </asp:TemplateField>
+                        <asp:TemplateField ShowHeader="False">
+                            <ItemTemplate>
+                                <asp:ImageButton ID="btnEliminar" runat="server" ImageUrl="https://cdn.discordapp.com/attachments/647215602452135936/649830202167263251/delete.png" CausesValidation="False" OnCommand="btnEliminar_Command" CommandArgument='<% #Eval("IdOferta")%> ' CommandName="Eliminar" Text="Eliminar"  OnClientClick="return confirm('¿Esta seguro que desea eliminar este usuario?');"/>
+                            </ItemTemplate>
+                             <ControlStyle Height="43px" Width="60px" />
+                        </asp:TemplateField>
+
+                    </Columns>
+
+                </asp:GridView>
+
+
+
+
         </div>
+            
              </div>
   </div>
     </div>
