@@ -104,8 +104,11 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
             {
                 return new Response<Usuario> { Answer = null, IsSuccess = false, Message = "Campo 'tipo usuario' vacío" };
             }
+
+            string pwEncriptada = Encriptar(usuario.Password);
+      
             Bd.Database.ExecuteSqlCommand("INSERT INTO Usuarios(Rut, Nombre, Apellido, Correo, Telefono, FechaNacimiento, TipoUsuario_IdTipoUsuario, Password, Suscrito, Puntos, Empresa_IdEmpresa, Comuna) VALUES({0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11})"
-                , usuario.Rut, usuario.Nombre, usuario.Apellido, usuario.Correo, usuario.Telefono, usuario.FechaNacimiento, usuario.IdTipoUsuario, usuario.Password, usuario.Suscrito, usuario.Puntos, usuario.IdEmpresa, usuario.Comuna);
+                , usuario.Rut, usuario.Nombre, usuario.Apellido, usuario.Correo, usuario.Telefono, usuario.FechaNacimiento, usuario.IdTipoUsuario, pwEncriptada, usuario.Suscrito, usuario.Puntos, usuario.IdEmpresa, usuario.Comuna);
             Bd.SaveChanges();
             return new Response<Usuario> { Answer = null, IsSuccess = true, Message = "Usuario creado correctamente" };
 
@@ -188,8 +191,10 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
                 return new Response<Usuario> { IsSuccess = false, Answer = null, Message = "No pertenece a empresa" };
             }
 
+            string pwEncriptada = Encriptar(usuario.Password);
+
             Bd.Database.ExecuteSqlCommand(string.Format("UPDATE Usuarios SET Rut = '{0}', Nombre = '{1}', Apellido = '{2}',  Correo = '{3}', Telefono = '{4}', FechaNacimiento = '{5}', TipoUsuario_IdTipoUsuario = '{6}', Password = '{7}', Comuna = '{8}', Suscrito = '{9}', Puntos = '{10}', Empresa_IdEmpresa = '{11}' WHERE IdUsuario = '{12}'",
-                                                         usuario.Rut, usuario.Nombre, usuario.Apellido, usuario.Correo, usuario.Telefono, usuario.FechaNacimiento, usuario.IdTipoUsuario, usuario.Password, usuario.Comuna, usuario.Suscrito, usuario.Puntos, usuario.IdEmpresa, id));
+                                                         usuario.Rut, usuario.Nombre, usuario.Apellido, usuario.Correo, usuario.Telefono, usuario.FechaNacimiento, usuario.IdTipoUsuario, pwEncriptada, usuario.Comuna, usuario.Suscrito, usuario.Puntos, usuario.IdEmpresa, id));
             Bd.SaveChanges();
 
             return new Response<Usuario> { IsSuccess = true, Answer = null, Message = "Producto actualizado" };
