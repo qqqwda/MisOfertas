@@ -16,6 +16,18 @@ namespace MisOfertas.WEB
             {
                 string id = Request.QueryString["id"];
                 TraerOfertasPorCategoria(id);
+                CargarComentarios(id);
+            }
+        }
+
+        private void CargarComentarios(string id)
+        {
+            int.Parse(id);
+            NOferta ofertas = new NOferta();
+            var listaOfertas = ofertas.ToList().Where(o => o.Producto.Categoria.IdCategoria == int.Parse(id));
+            foreach (var item in listaOfertas)
+            {
+                //cargar comentarios con item.OpinionOferta
             }
         }
 

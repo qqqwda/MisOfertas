@@ -164,8 +164,6 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
                 of.PorcentajeDescuento = oferta.PorcentajeDescuento;
                 of.Valor = oferta.Valor;
                 
-                Bd.Database.ExecuteSqlCommand(string.Format("UPDATE Ofertas SET Producto_IdProducto ={0}",oferta.IdProducto));
-                
                 Bd.SaveChanges();
 
                 return new Response<OfertaModel> { IsSuccess = true, Answer = oferta, Message = "Error" };
