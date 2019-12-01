@@ -31,7 +31,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
         public List<Categoria> ToList()
         {
 
-            throw new NotImplementedException();
+            return Bd.Categorias.ToList();
 
         }
 

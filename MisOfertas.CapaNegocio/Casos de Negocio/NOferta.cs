@@ -76,7 +76,51 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
 
         public List<Oferta> ToList()
         {
+
+
             return Bd.Ofertas.ToList();
+
+        }
+        public List<OfertaHelper> ToListModel()
+        {
+            List<OfertaHelper> listaOferta = new List<OfertaHelper>();
+            foreach (var item in Bd.Ofertas.ToList())
+            {
+                OfertaHelper oferta = new OfertaHelper();
+                ProductoModel producto = new ProductoModel();
+
+                oferta.IdOferta = item.IdOferta;
+                oferta.IdUsuario = item.Usuario.IdUsuario;
+                oferta.PorcentajeDescuento = item.PorcentajeDescuento;
+                oferta.Valor = item.Valor;
+                oferta.CompraMax = item.CompraMax;
+                oferta.CompraMin = item.CompraMin;
+                oferta.Descripcion = item.Descripcion;
+                oferta.FechaDisponibilidad = item.FechaDisponibilidad;
+
+
+                //carga producto
+                producto.IdProducto = item.Producto.IdProducto;
+                producto.Descripcion = item.Producto.Descripcion;
+                producto.FechaVencimiento = item.Producto.FechaVencimiento;
+                producto.IdCategoria = item.Producto.Categoria.IdCategoria;
+                producto.IdEmpresa = item.Producto.Empresa.IdEmpresa;
+                producto.Imagen = item.Producto.Imagen;
+                producto.Marca = item.Producto.Marca;
+                producto.Nombre = item.Producto.Nombre;
+                producto.PrecioNormal = item.Producto.PrecioNormal;
+                producto.Stock = item.Producto.Stock;
+                producto.Temporada = item.Producto.Temporada;
+                producto.Modelo = item.Producto.Modelo;
+                
+
+                oferta.Producto = producto;
+                listaOferta.Add(oferta);
+
+                
+            }
+
+            return listaOferta;
         }
 
         public Response<Oferta> Update(int id, Oferta oferta)

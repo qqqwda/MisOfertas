@@ -8,6 +8,7 @@ namespace MisOfertas.CapaDatos.JModels
 {
     public class OfertaModel
     {
+        public int IdOferta { get; set; }
         public string Descripcion { get; set; }
         public int CompraMin { get; set; }
         public int CompraMax { get; set; }

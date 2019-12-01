@@ -18,9 +18,9 @@ namespace MisOfertas.API.Controllers
             negocio = new MainCasosNegocio();
         }
 
-        public IEnumerable<Oferta> Get()
+        public IEnumerable<OfertaHelper> Get()
         {
-            return negocio.Oferta.ToList();
+            return negocio.Oferta.ToListModel();
         }
 
 

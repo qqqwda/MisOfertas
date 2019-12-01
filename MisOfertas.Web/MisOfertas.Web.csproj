@@ -75,6 +75,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ayuda.aspx" />
+    <Content Include="Categoria.aspx" />
+    <Content Include="Categorias.aspx" />
     <Content Include="CrearOferta.aspx" />
     <Content Include="cssLogin\main.css" />
     <Content Include="cssLogin\util.css" />
@@ -1778,6 +1780,20 @@
     <Compile Include="Ayuda.aspx.designer.cs">
       <DependentUpon>Ayuda.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Categoria.aspx.cs">
+      <DependentUpon>Categoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Categoria.aspx.designer.cs">
+      <DependentUpon>Categoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Categorias.aspx.cs">
+      <DependentUpon>Categorias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Categorias.aspx.designer.cs">
+      <DependentUpon>Categorias.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CrearOferta.aspx.cs">
       <DependentUpon>CrearOferta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1958,7 +1974,6 @@
     <Content Include="fontsLogin\poppins\Poppins-Thin.ttf" />
     <Content Include="fontsLogin\poppins\Poppins-ThinItalic.ttf" />
     <Content Include="MasterPgePriv.Master" />
-    <None Include="packages.config" />
     <Content Include="vendor\bootstrap\js\bootstrap.bundle.js.map" />
     <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
     <Content Include="vendor\bootstrap\js\bootstrap.js.map" />

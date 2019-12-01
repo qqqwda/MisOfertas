@@ -51,6 +51,7 @@
     <Compile Include="CommonContext.cs" />
     <Compile Include="JModels\EmpresaModel.cs" />
     <Compile Include="JModels\LocalModel.cs" />
+    <Compile Include="JModels\OfertaHelper.cs" />
     <Compile Include="JModels\OfertaModel.cs" />
     <Compile Include="JModels\ProductoModel.cs" />
     <Compile Include="JModels\UsuarioModel.cs" />

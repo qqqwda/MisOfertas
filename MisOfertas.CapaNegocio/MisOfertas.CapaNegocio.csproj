@@ -57,6 +57,7 @@
     <Compile Include="Casos de Negocio\NOferta.cs" />
     <Compile Include="Casos de Negocio\NOpinionOferta.cs" />
     <Compile Include="Casos de Negocio\NProducto.cs" />
+    <Compile Include="Casos de Negocio\NTipoUsuario.cs" />
     <Compile Include="Casos de Negocio\NUsuario.cs" />
     <Compile Include="Casos de Negocio\NValoracion.cs" />
     <Compile Include="IMaintanable.cs" />
