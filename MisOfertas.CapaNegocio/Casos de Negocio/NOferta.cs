@@ -163,10 +163,10 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
                 of.FechaDisponibilidad = oferta.FechaDisponibilidad;
                 of.PorcentajeDescuento = oferta.PorcentajeDescuento;
                 of.Valor = oferta.Valor;
-                
+
                 Bd.SaveChanges();
 
-                return new Response<OfertaModel> { IsSuccess = true, Answer = oferta, Message = "Error" };
+                return new Response<OfertaModel> { IsSuccess = true, Answer = oferta, Message = "Oferta cambiada con éxito" };
             }
             catch (Exception)
             {
