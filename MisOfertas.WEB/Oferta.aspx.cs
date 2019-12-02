@@ -18,7 +18,8 @@ namespace MisOfertas.WEB
             {
                 string id = Request.QueryString["id"];
                 int idOferta = int.Parse(id);
-                var oferta = CargarOferta(idOferta);
+                CapaDatos.Models.Oferta oferta = new CapaDatos.Models.Oferta();
+                 oferta = CargarOferta(idOferta);
                 CargarComentarios(oferta);
 
 
@@ -27,16 +28,36 @@ namespace MisOfertas.WEB
 
         private void CargarComentarios(CapaDatos.Models.Oferta oferta)
         {
-            var op = oferta.OpinionOfertas;
+
+            List<OpinionOferta> listaOpinion = new List<OpinionOferta>(); 
+            try
+            {
+                listaOpinion = oferta.OpinionOfertas.ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
         }
 
         private CapaDatos.Models.Oferta CargarOferta(int id)
         {
-            NOferta negocio = new NOferta();
+            try
+            {
+                NOferta negocio = new NOferta();
+                CapaDatos.Models.Oferta oferta = negocio.ToList().FirstOrDefault(x => x.IdOferta == id);
+                return oferta;
+            }
+            catch (Exception)
+            {
 
-            CapaDatos.Models.Oferta oferta = negocio.ToList().FirstOrDefault(x => x.IdOferta == id);
+                throw;
+            }
 
-            return oferta;
+            
         }
 
 

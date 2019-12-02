@@ -71,7 +71,7 @@
 											</div>
 											<div class="add-to-cart">
                                                 
-                                                <asp:Button ID="BtnCategoria" runat="server"  Text="Ver Producto"  class="add-to-cart-btn" OnClick="BtnCategoria_Click" OnCommand="BtnCategoria_Command" CommandArgument='<% #Eval("IdProducto")%>'></asp:Button>
+                                                <asp:Button ID="BtnCategoria" runat="server"  Text="Ver Producto"  class="add-to-cart-btn" OnClick="BtnCategoria_Click" OnCommand="BtnCategoria_Command" CommandArgument='<% #Eval("IdOferta")%>'></asp:Button>
                                                 <%--<i class="fa fa-shopping-cart"></i>--%>
 												<%--<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Ver Producto--%>
                                                <%--   <asp:Button runat="server" Text="Ir a categoría" CausesValidation="False" OnCommand="Categoria_Command" CommandArgument='<% #Eval("IdCategoria")%>'  class="add-to-cart-btn" ></asp:Button>--%>
