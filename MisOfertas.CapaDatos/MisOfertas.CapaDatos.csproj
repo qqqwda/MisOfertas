@@ -53,6 +53,8 @@
     <Compile Include="JModels\LocalModel.cs" />
     <Compile Include="JModels\OfertaHelper.cs" />
     <Compile Include="JModels\OfertaModel.cs" />
+    <Compile Include="JModels\OfertaProductoModel.cs" />
+    <Compile Include="JModels\OpinionOfertaModel.cs" />
     <Compile Include="JModels\ProductoModel.cs" />
     <Compile Include="JModels\UsuarioModel.cs" />
     <Compile Include="Migrations\201910082331583_nueva.cs" />

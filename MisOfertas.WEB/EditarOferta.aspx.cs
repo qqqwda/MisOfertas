@@ -72,10 +72,12 @@ namespace MisOfertas.WEB
                 NOferta noferta = new NOferta();
                 OfertaModel ofertaModel = new OfertaModel();
                 var sesion = (Usuario)Session["usuario"];
-                ofertaModel.CompraMax = int.Parse(txtCompraMax.Text);
-                ofertaModel.CompraMin = int.Parse(txtcompraMin.Text);
+                ofertaModel.CompraMax = (int)(decimal.Parse(txtCompraMax.Text));
+                ofertaModel.CompraMin = (int)(decimal.Parse(txtcompraMin.Text));
                 ofertaModel.Descripcion = txtDescripcion.InnerText;
-                ofertaModel.PorcentajeDescuento = int.Parse(txtDescuento.Text);
+               
+
+                ofertaModel.PorcentajeDescuento = (int)(decimal.Parse(txtDescuento.Text));
                 ofertaModel.Valor = int.Parse(txtValor.Text);
                 ofertaModel.FechaDisponibilidad = DateTime.Parse(txtfechaProduct.Text);
                 ofertaModel.IdProducto = int.Parse(ddlProducto.SelectedItem.Value);

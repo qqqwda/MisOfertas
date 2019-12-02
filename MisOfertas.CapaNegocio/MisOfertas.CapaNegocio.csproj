@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Casos de Negocio Web\Helper\EmailHelper.cs" />
+    <Compile Include="Casos de Negocio Web\Helper\Helper.cs" />
     <Compile Include="Casos de Negocio Web\NUsuario.cs" />
     <Compile Include="Casos de Negocio\MainCasosNegocio.cs" />
     <Compile Include="Casos de Negocio\NCategoria.cs" />

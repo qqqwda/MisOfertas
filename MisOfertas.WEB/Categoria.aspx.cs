@@ -1,4 +1,6 @@
-﻿using MisOfertas.CapaNegocio.Casos_de_Negocio;
+﻿using MisOfertas.CapaDatos.JModels;
+using MisOfertas.CapaNegocio.Casos_de_Negocio;
+using MisOfertas.CapaNegocio.Casos_de_Negocio_Web.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,26 +18,24 @@ namespace MisOfertas.WEB
             {
                 string id = Request.QueryString["id"];
                 TraerOfertasPorCategoria(id);
-                CargarComentarios(id);
             }
         }
 
-        private void CargarComentarios(string id)
-        {
-            int.Parse(id);
-            NOferta ofertas = new NOferta();
-            var listaOfertas = ofertas.ToList().Where(o => o.Producto.Categoria.IdCategoria == int.Parse(id));
-            foreach (var item in listaOfertas)
-            {
-                //cargar comentarios con item.OpinionOferta
-            }
-        }
+        
 
         private void TraerOfertasPorCategoria(string id)
         {
             int.Parse(id);
-            NOferta ofertas = new NOferta();
-            var listaOfertas = ofertas.ToList().Where(o => o.Producto.Categoria.IdCategoria == int.Parse(id)).ToList();
+
+            
+            List<OfertaProductoModel> ofertaProductos = Helper.OfertasProductos(int.Parse(id));
+            dlOfertasPorCategoria.DataSource = ofertaProductos;
+            dlOfertasPorCategoria.DataBind();
+        }
+
+        protected void BtnCategoria_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

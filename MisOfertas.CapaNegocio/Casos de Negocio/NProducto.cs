@@ -61,6 +61,24 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
             return new Response<Producto> { IsSuccess = true, Answer = producto, Message = "Producto creado" };
 
         }
+
+        public string AgregarImagen(string nombreImagen, int id)
+        {
+            try
+            {
+
+                Bd.Database.ExecuteSqlCommand($"UPDATE productoes SET Imagen='{nombreImagen}'  WHERE IdProducto = {id}");
+                Bd.SaveChanges();
+                return "Registrado en la bd con éxito";
+            }
+            catch (Exception ex)
+            {
+
+
+
+                return ex.Message;
+            }
+        }
         public Response<Producto> Create(ProductoModel producto)
         {
             if (producto.IdEmpresa == 0)

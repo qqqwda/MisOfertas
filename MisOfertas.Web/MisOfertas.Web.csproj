@@ -102,8 +102,10 @@
     <Content Include="fonts\slick.svg" />
     <Content Include="HomeGerente.aspx" />
     <Content Include="HomeEncargado.aspx" />
+    <Content Include="imagesBoleta\892378_10200529120527202_961995526_o.jpg" />
     <Content Include="imagesLogin\bg-01.jpg" />
     <Content Include="imagesLogin\icons\favicon.ico" />
+    <Content Include="imagesProductos\892378_10200529120527202_961995526_o.jpg" />
     <Content Include="Img\bg_login.jpg" />
     <Content Include="Img\Excel.png" />
     <Content Include="Img\hotdeal.png" />
@@ -139,6 +141,7 @@
     <Content Include="js\sweetalert.min.js" />
     <Content Include="ListaProductos.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Oferta.aspx" />
     <Content Include="OfertasHot.aspx" />
     <Content Include="OfertasProductos.aspx" />
     <Content Include="PruebaCorreo.aspx" />
@@ -1856,6 +1859,13 @@
     </Compile>
     <Compile Include="MasterPgePriv.Master.designer.cs">
       <DependentUpon>MasterPgePriv.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Oferta.aspx.cs">
+      <DependentUpon>Oferta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Oferta.aspx.designer.cs">
+      <DependentUpon>Oferta.aspx</DependentUpon>
     </Compile>
     <Compile Include="OfertasHot.aspx.cs">
       <DependentUpon>OfertasHot.aspx</DependentUpon>
