@@ -6,7 +6,7 @@ namespace MisOfertas.WEB
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Response.Redirect("INICIO.aspx");
         }
     }
 }
