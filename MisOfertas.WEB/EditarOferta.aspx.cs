@@ -79,7 +79,7 @@ namespace MisOfertas.WEB
                 int idProd = int.Parse(id);
                 noferta.UpdateModel(idProd, ofertaModel);
 
-                Response.Redirect("HomeGerente.aspx");
+                Response.Redirect("HomeEncargado.aspx");
             
             
 
@@ -90,7 +90,7 @@ namespace MisOfertas.WEB
         {
             NOferta noferta = new NOferta();
             noferta.Delete(intId);
-            Response.Redirect("HomeGerente.aspx");
+            Response.Redirect("HomeEncargado.aspx");
         }
     }
 }

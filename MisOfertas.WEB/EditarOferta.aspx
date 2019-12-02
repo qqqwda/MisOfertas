@@ -34,7 +34,11 @@
 						<!-- Billing Details -->
 						<div class="billing-details">
 							<div class="section-title">
+<<<<<<< Updated upstream
 								<h3 class="title">CREACION DE OFERTAS</h3>
+=======
+								<h3 class="title"> ACTUALIZAR OFERTAS</h3>
+>>>>>>> Stashed changes
 							</div>
                             <div class="form-group">
                             <asp:DropDownList ID="ddlProducto" runat="server" Width="350">
