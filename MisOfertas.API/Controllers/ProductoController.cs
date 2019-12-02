@@ -30,7 +30,7 @@ namespace MisOfertas.API.Controllers
             var response = negocio.Producto.Create(producto);
             if (response.IsSuccess)
             {
-                return Ok(response.Message);
+                return Ok(response.Answer.IdProducto);
             }
 
             return BadRequest(response.Message);

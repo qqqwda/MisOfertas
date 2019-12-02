@@ -114,24 +114,10 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
                 return new Response<Producto> { IsSuccess = true, Answer = null, Message = "Stock debe ser mayor a 0" };
             }
 
-            Producto prod = new Producto
-            {
-                Categoria = null,
-                Descripcion = producto.Descripcion,
-                Empresa = null,
-                FechaVencimiento = producto.FechaVencimiento,
-                Imagen = producto.Imagen,
-                Stock = producto.Stock,
-                Marca = producto.Marca,
-                Modelo = producto.Modelo,
-                Nombre = producto.Nombre,
-                Temporada = producto.Temporada,
-                PrecioNormal = producto.PrecioNormal
-
-            };
+            
             Bd.Database.ExecuteSqlCommand("INSERT INTO productoes(PrecioNormal, Descripcion, Marca, Modelo, Stock, Categoria_IdCategoria, Empresa_IdEmpresa, Nombre, FechaVencimiento, Imagen, Temporada) VALUES ({0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10})",
                 producto.PrecioNormal, producto.Descripcion, producto.Marca, producto.Modelo, producto.Stock, producto.IdCategoria, producto.IdEmpresa, producto.Nombre, producto.FechaVencimiento, producto.Imagen, producto.Temporada);
-            
+            var prod = Bd.Productos.OrderByDescending(p => p.IdProducto).FirstOrDefault();
             Bd.SaveChanges();
 
             return new Response<Producto> { IsSuccess = true, Answer = prod, Message = "Producto creado" };
