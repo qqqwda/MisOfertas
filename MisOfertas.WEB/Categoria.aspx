@@ -2,18 +2,41 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <div class="section">
+
+      <!-- Boo*+tstrap -->
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+
+		<!-- Slick -->
+		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
+		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+
+		<!-- nouislider -->
+		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+
+
+
+    <div class="col-md-12">
+						<div class="row">
+							<div class="products-tabs">
+
+                    <asp:DataList ID="dlOfertasPorCategoria" runat="server" Height="1756px" Width="462px">
+                         <ItemTemplate>
+
+                              <div class="product">
 			<!-- container -->
 			<div class="container">
 				<!-- row -->
                 <div class="col-md-12">
 				<div class="row">	
 
-                    <asp:DataList ID="dlOfertasPorCategoria" runat="server" Height="1756px" Width="462px">
-     
-    
-    
-                    <ItemTemplate>
+
 							<div class="products-tabs">
 								<!-- tab -->
 								<div id="tab1" class="tab-pane active">
@@ -30,7 +53,7 @@
 											</div>
 											<div class="product-body">
 												<p class="product-name">'<%#Eval("Descripcion")%>'</p>
-                                                <h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+                                                <h4 class="product-price"><%#Eval("Valor")%><del class="product-old-price"><%#Eval("PrecioNormal")%></del></h4>
 												<%--<h3 class="product-category">'<%#Eval("Descripcion")%>'</h3>--%>
 												<h4 class="product-price"></h4>
 												<div class="product-rating">
@@ -47,8 +70,9 @@
 												</div>
 											</div>
 											<div class="add-to-cart">
-
-                                                <asp:Button ID="BtnCategoria" runat="server" Text="Ver Categoria"  class="add-to-cart-btn" OnClick="BtnCategoria_Click"/>
+                                                
+                                                <asp:Button ID="BtnCategoria" runat="server"  Text="Ver Producto"  class="add-to-cart-btn" OnClick="BtnCategoria_Click" OnCommand="BtnCategoria_Command" CommandArgument='<% #Eval("IdProducto")%>'></asp:Button>
+                                                <%--<i class="fa fa-shopping-cart"></i>--%>
 												<%--<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Ver Producto--%>
                                                <%--   <asp:Button runat="server" Text="Ir a categoría" CausesValidation="False" OnCommand="Categoria_Command" CommandArgument='<% #Eval("IdCategoria")%>'  class="add-to-cart-btn" ></asp:Button>--%>
 											</div>
@@ -56,10 +80,25 @@
                                         </div>
                                     </div>
                                 </div>
+                             </div>
+                    </div>
+                </div>
+                                  
                         </ItemTemplate>
                         </asp:DataList>
                     </div>
-                             </div>
+                  </div>
                 </div>
-          </div>
+
+
+        <script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/slick.min.js"></script>
+		<script src="js/nouislider.min.js"></script>
+		<script src="js/jquery.zoom.min.js"></script>
+		<script src="js/main.js"></script>
+
+
+
+     
 </asp:Content>

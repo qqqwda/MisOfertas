@@ -47,7 +47,7 @@
 											<div class="product-img">
 												<img src='<%#Eval("Imagen")%>' alt="">
 												<div class="product-label">
-													<span class="sale">-VER GRANDES %%%</span>
+													<span class="sale">-VER GRANDES OFERTAS %</span>
 													<span class="new">NUEVO</span>
 												</div>
 											</div>
