@@ -25,5 +25,14 @@ namespace MisOfertas.CapaDatos.JModels
         public string Imagen { get; set; }
         public DateTime FechaVencimiento { get; set; }
         public string Temporada { get; set; }
+
+        public string NombreCategoria { get; set; }
+
+        public int IdCategoria { get; set; }
+
+        public string NombreEmpresa { get; set; }
+
+        public int IdEmpresa { get; set; }
+
     }
 }

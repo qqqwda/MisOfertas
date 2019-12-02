@@ -36,6 +36,11 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio_Web.Helper
                 ofertaproducto.Stock = item.Producto.Stock;
                 ofertaproducto.Temporada = item.Producto.Temporada;
                 ofertaproducto.Valor = item.Valor;
+                ofertaproducto.IdCategoria = item.Producto.Categoria.IdCategoria;
+                ofertaproducto.IdEmpresa = item.Producto.Empresa.IdEmpresa;
+                ofertaproducto.NombreCategoria=item.Producto.Categoria.Descripcion;
+                ofertaproducto.NombreEmpresa = item.Producto.Empresa.Nombre;
+
 
                 ofertaProductos.Add(ofertaproducto);
 
