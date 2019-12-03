@@ -302,13 +302,14 @@
 
 													<div class="input-rating">
 														<span>Tu Calificacion: </span>
-														<div class="stars">
-															<input id="star5" name="rating" value="5" type="radio"><label for="star5"></label>
-															<input id="star4" name="rating" value="4" type="radio"><label for="star4"></label>
-															<input id="star3" name="rating" value="3" type="radio"><label for="star3"></label>
-															<input id="star2" name="rating" value="2" type="radio"><label for="star2"></label>
-															<input id="star1" name="rating" value="1" type="radio"><label for="star1"></label>
-														</div>
+														<label for="exampleFormControlSelect1">Example select</label>
+                                                            <select runat="server" class="form-control" id="sCalificacion">
+                                                              <option>1</option>
+                                                              <option>2</option>
+                                                              <option>3</option>
+                                                              <option>4</option>
+                                                              <option>5</option>
+                                                            </select>
                                           <asp:FileUpload ID="FileUpload1"  runat="server" />
 													</div>
 													<asp:button OnClick="PublicarComentario_Click" id="PublicarComentario" runat="server" class="primary-btn"></asp:button>

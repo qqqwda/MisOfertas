@@ -60,16 +60,24 @@ namespace MisOfertas.WEB
             int idOferta = int.Parse(id);
 
             var sesion = (Usuario)Session["usuario"];
-            NOpinionOferta negocio = new NOpinionOferta();
+            NOpinionOferta negocioOferta = new NOpinionOferta();
+            NValoracion negocioValoracion = new NValoracion();
             OpinionOfertaModel opinion = new OpinionOfertaModel();
             opinion.Comentario = txtComentario.InnerText;
             opinion.FechaPublicacion = DateTime.Now;
             opinion.IdOferta = idOferta;
             opinion.IdUsuario = sesion.IdUsuario;
             opinion.Imagen = "";
+            var index = sCalificacion.SelectedIndex;
 
-            negocio.Create(opinion);
+            negocioOferta.Create(opinion);
+
+            ValoracionModel valoracion = new ValoracionModel();
+            valoracion.Evaluacion = index + 1;
+            valoracion.IdOferta = idOferta;
+            valoracion.IdUsuario = sesion.IdUsuario;
             
+            negocioValoracion.Create(valoracion);
             
         }
 

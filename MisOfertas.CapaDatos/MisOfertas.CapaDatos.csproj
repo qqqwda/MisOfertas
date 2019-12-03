@@ -58,6 +58,7 @@
     <Compile Include="JModels\OpinionOfertaModel.cs" />
     <Compile Include="JModels\ProductoModel.cs" />
     <Compile Include="JModels\UsuarioModel.cs" />
+    <Compile Include="JModels\ValoracionModel.cs" />
     <Compile Include="Migrations\201910082331583_nueva.cs" />
     <Compile Include="Migrations\201910082331583_nueva.Designer.cs">
       <DependentUpon>201910082331583_nueva.cs</DependentUpon>

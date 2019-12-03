@@ -25,6 +25,9 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
 
                 Bd.OpinionOfertas.OrderByDescending(o => o.IdOpinionOferta).First().FechaPublicacion = opinion.FechaPublicacion;
                 Bd.SaveChanges();
+                var puntosActuales = Bd.Usuarios.FirstOrDefault(u => u.IdUsuario == opinion.IdUsuario).Puntos;
+                Bd.Usuarios.FirstOrDefault(u => u.IdUsuario == opinion.IdUsuario).Puntos = puntosActuales + 5;
+                Bd.SaveChanges();
                 return new Response<OpinionOferta> { Answer = null, IsSuccess = true, Message = "Comentario agregado correctamente" };
             }
             catch (Exception ex)

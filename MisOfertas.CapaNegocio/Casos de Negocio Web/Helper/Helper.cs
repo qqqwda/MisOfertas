@@ -70,6 +70,8 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio_Web.Helper
             return comentarios;
         }
 
+        
+
 
         public static List<OfertaProductoModel> OfertasProductosSegunOferta(int id)
         {
