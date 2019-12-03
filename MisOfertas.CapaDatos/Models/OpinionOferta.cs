@@ -17,6 +17,8 @@ namespace MisOfertas.CapaDatos.Models
         
         public virtual Usuario Usuario { get; set; }
 
+        public virtual Oferta Oferta { get; set; }
+
     }
 
 }

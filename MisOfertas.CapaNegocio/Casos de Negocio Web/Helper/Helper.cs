@@ -49,6 +49,27 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio_Web.Helper
             return ofertaProductos;
         }
 
+        public static List<ComentarioModel> ComentariosOferta(int id)
+        {
+            NOferta ofertas = new NOferta();
+            var listaComentarios = ofertas.ToList().FirstOrDefault(o => o.IdOferta == id).OpinionOfertas;
+            List<ComentarioModel> comentarios = new List<ComentarioModel>();
+            foreach (var item in listaComentarios)
+            {
+                ComentarioModel comentario = new ComentarioModel();
+
+                comentario.Comentario = item.Comentario;
+                comentario.FechaPublicacion = item.FechaPublicacion;
+                comentario.IdProducto = item.Oferta.Producto.IdProducto;
+                comentario.Imagen = item.Imagen;
+                comentario.NombreCompleto = item.Usuario.Nombre + " " + item.Usuario.Apellido;
+                comentarios.Add(comentario);
+
+            }
+
+            return comentarios;
+        }
+
 
         public static List<OfertaProductoModel> OfertasProductosSegunOferta(int id)
         {

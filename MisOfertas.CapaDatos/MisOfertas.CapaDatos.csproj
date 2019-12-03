@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonContext.cs" />
+    <Compile Include="JModels\ComentarioModel.cs" />
     <Compile Include="JModels\EmpresaModel.cs" />
     <Compile Include="JModels\LocalModel.cs" />
     <Compile Include="JModels\OfertaHelper.cs" />

@@ -20,14 +20,17 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
         {
             try
             {
-                Bd.Database.ExecuteSqlCommand(string.Format($"INSERT INTO Ofertas(Comentario, Imagen, FechaPublicacion, Usuario_IdUsuario, Oferta_IdOferta) VALUES({opinion.Comentario},{opinion.Imagen},{opinion.FechaPublicacion},{opinion.IdUsuario},{opinion.IdOferta})"));
+                Bd.Database.ExecuteSqlCommand(string.Format("INSERT INTO OpinionOfertas (Comentario, Imagen, Usuario_IdUsuario, Oferta_IdOferta, FechaPublicacion) VALUES('{0}','{1}','{2}','{3}','{4}')", opinion.Comentario, opinion.Imagen, opinion.IdUsuario, opinion.IdOferta, "2011-11-11"));
+                Bd.SaveChanges();
+
+                Bd.OpinionOfertas.OrderByDescending(o => o.IdOpinionOferta).First().FechaPublicacion = opinion.FechaPublicacion;
                 Bd.SaveChanges();
                 return new Response<OpinionOferta> { Answer = null, IsSuccess = true, Message = "Comentario agregado correctamente" };
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                return new Response<OpinionOferta> { Answer = null, IsSuccess = false, Message = "Error al cargar comentario" };
+                return new Response<OpinionOferta> { Answer = null, IsSuccess = false, Message = "Error al cargar comentario: "+ex.Message };
             }
             
         }

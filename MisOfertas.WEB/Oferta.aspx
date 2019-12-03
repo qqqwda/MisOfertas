@@ -255,15 +255,22 @@
 											</div>
 										</div>
 										<!-- /Rating -->
-
+                                        
+        </ItemTemplate>
+    </asp:DataList>
 										<!-- Reviews -->
 										<div class="col-md-6">
+                                            <asp:DataList ID="dlComentarios" runat="server">
+                                                
+                                                    <ItemTemplate>
 											<div id="reviews">
-												<ul class="reviews">
+
+                                                
+                                                        <ul class="reviews">
 													<li>
 														<div class="review-heading">
-															<h5 class="name">Marco Fito</h5>
-															<p class="date">27 DEC 2018, 8:0 PM</p>
+															<h5 class="name">'<%#Eval("NombreCompleto")%>'</h5>
+															<p class="date">'<%#Eval("FechaPublicacion")%>'</p>
 															<div class="review-rating">
 																<i class="fa fa-star"></i>
 																<i class="fa fa-star"></i>
@@ -273,49 +280,13 @@
 															</div>
 														</div>
 														<div class="review-body">
-															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-														</div>
-													</li>
-													<li>
-														<div class="review-heading">
-															<h5 class="name">Luis Pedro</h5>
-															<p class="date">27 DEC 2018, 8:0 PM</p>
-															<div class="review-rating">
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star-o empty"></i>
-															</div>
-														</div>
-														<div class="review-body">
-															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-														</div>
-													</li>
-													<li>
-														<div class="review-heading">
-															<h5 class="name">Juan Lopez</h5>
-															<p class="date">27 DEC 2018, 8:0 PM</p>
-															<div class="review-rating">
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star-o empty"></i>
-															</div>
-														</div>
-														<div class="review-body">
-															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+															<p><%#Eval("Comentario")%>'</p>
 														</div>
 													</li>
 												</ul>
-												<ul class="reviews-pagination">
-													<li class="active">1</li>
-													<li><a href="#">2</a></li>
-													<li><a href="#">3</a></li>
-													<%--<li><a href="#">4</a></li>--%>
-													<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-												</ul>
+                                                    </ItemTemplate>
+												</asp:DataList>
+												
 											</div>
 										</div>
 										<!-- /Reviews -->
@@ -324,9 +295,11 @@
 										<div class="col-md-3">
 											<div id="review-form">
 												<form class="review-form">
-													<input class="input" type="text" placeholder="Ingresa Tu Nombre">
-													<input class="input" type="email" placeholder="Ingresa tu Email">
-													<textarea class="input" placeholder="Escribe un comentario"></textarea>
+
+
+                                                    <textarea id="txtComentario" class="input" placeholder="Escribe un comentario" runat="server" cols="20" rows="2"></textarea>
+													
+
 													<div class="input-rating">
 														<span>Tu Calificacion: </span>
 														<div class="stars">
@@ -338,7 +311,7 @@
 														</div>
                                           <asp:FileUpload ID="FileUpload1"  runat="server" />
 													</div>
-													<button class="primary-btn">Publicar</button>
+													<asp:button OnClick="PublicarComentario_Click" id="PublicarComentario" runat="server" class="primary-btn"></asp:button>
 												</form>
 											</div>
 										</div>
@@ -359,8 +332,6 @@
 
 
 
-        </ItemTemplate>
-    </asp:DataList>
 
 
   

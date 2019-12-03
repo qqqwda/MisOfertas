@@ -20,29 +20,31 @@
 
     	
   
-	<div class="col-md-12">
-						<div class="row">
-							<div class="products-tabs">
+	
     
-    <asp:DataList ID="dlCategorias" runat="server" Height="1756px" Width="462px">
+    <asp:DataList ID="dlCategorias" runat="server">
+     
+    
+    
+        <ItemStyle BorderColor="#FF0066" />
      
     
     
         <ItemTemplate>
-            
-      <div class="product">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-                <div class="col-md-12">
-				<div class="row">	
+            <div class="section">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+            <div class="col-md-12">
+                        <div class="r ow">
+                            <div class="products-tabs">
+                                <!-- tab -->
+                                <div id="tab1" class="tab-pane active">
+                                    <div class="products-slick" data-nav="#slick-nav-1">
+                                        <!-- product -->   
+                                        
 
-							<div class="products-tabs">
-								<!-- tab -->
-								<div id="tab1" class="tab-pane active">
-									<div class="products-slick" data-nav="#slick-nav-1">
-										<!-- product -->
-                                     
 										<div class="product">
 											<div class="product-img">
 												<img src='<%#Eval("Imagen")%>' alt="">
@@ -74,21 +76,20 @@
 											</div>
 										</div>
                                             
-                                        </div>
-                                    </div>
                                 </div>
-                               </div>
                                </div>	
-                  </div>
-									
+                              </div>
+                             </div>
+							</div>	
+
+                    </div>
+                </div>
+                </div>
 
                 </ItemTemplate>
 
     </asp:DataList>
     
-  </div>
-    </div>
-    </div>
     
   <script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>

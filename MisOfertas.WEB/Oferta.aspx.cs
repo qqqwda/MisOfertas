@@ -22,31 +22,17 @@ namespace MisOfertas.WEB
                 int idOferta = int.Parse(id);
                 List<OfertaProductoModel> oferta;
                 oferta = Helper.OfertasProductosSegunOferta(idOferta);
-                //CargarComentarios(oferta);
+                
                 dlOferta.DataSource = oferta;
                 dlOferta.DataBind();
 
+                dlComentarios.DataSource = Helper.ComentariosOferta(idOferta);
+                dlComentarios.DataBind();
 
             }
         }
 
-        private void CargarComentarios(List<CapaDatos.Models.Oferta> oferta)
-        {
-            
-
-            List<OpinionOferta> listaOpinion = new List<OpinionOferta>(); 
-            try
-            {
-                listaOpinion = oferta.FirstOrDefault().OpinionOfertas.ToList();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-
-        }
+        
 
         private List<CapaDatos.Models.Oferta> CargarOferta(int id)
         {
@@ -76,7 +62,7 @@ namespace MisOfertas.WEB
             var sesion = (Usuario)Session["usuario"];
             NOpinionOferta negocio = new NOpinionOferta();
             OpinionOfertaModel opinion = new OpinionOfertaModel();
-            opinion.Comentario = "";
+            opinion.Comentario = txtComentario.InnerText;
             opinion.FechaPublicacion = DateTime.Now;
             opinion.IdOferta = idOferta;
             opinion.IdUsuario = sesion.IdUsuario;
@@ -87,6 +73,20 @@ namespace MisOfertas.WEB
             
         }
 
-
+        protected void PublicarComentario_Click(object sender, EventArgs e)
+        {
+            var sesion = (Usuario)Session["usuario"];
+            if (sesion != null)
+            {
+                AgregarComentario();
+                string id = Request.QueryString["id"];
+                Response.Redirect("Oferta.aspx?id=" + id);
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+            
+        }
     }
 }
