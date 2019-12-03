@@ -1,6 +1,7 @@
 ﻿using MisOfertas.CapaDatos.JModels;
 using MisOfertas.CapaDatos.Models;
 using MisOfertas.CapaNegocio.Casos_de_Negocio;
+using MisOfertas.CapaNegocio.Casos_de_Negocio_Web.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,23 +17,27 @@ namespace MisOfertas.WEB
         {
             if (!IsPostBack)
             {
+
                 string id = Request.QueryString["id"];
                 int idOferta = int.Parse(id);
-                CapaDatos.Models.Oferta oferta = new CapaDatos.Models.Oferta();
-                 oferta = CargarOferta(idOferta);
-                CargarComentarios(oferta);
+                List<OfertaProductoModel> oferta;
+                oferta = Helper.OfertasProductosSegunOferta(idOferta);
+                //CargarComentarios(oferta);
+                dlOferta.DataSource = oferta;
+                dlOferta.DataBind();
 
 
             }
         }
 
-        private void CargarComentarios(CapaDatos.Models.Oferta oferta)
+        private void CargarComentarios(List<CapaDatos.Models.Oferta> oferta)
         {
+            
 
             List<OpinionOferta> listaOpinion = new List<OpinionOferta>(); 
             try
             {
-                listaOpinion = oferta.OpinionOfertas.ToList();
+                listaOpinion = oferta.FirstOrDefault().OpinionOfertas.ToList();
             }
             catch (Exception)
             {
@@ -43,12 +48,14 @@ namespace MisOfertas.WEB
 
         }
 
-        private CapaDatos.Models.Oferta CargarOferta(int id)
+        private List<CapaDatos.Models.Oferta> CargarOferta(int id)
         {
+
+
             try
             {
                 NOferta negocio = new NOferta();
-                CapaDatos.Models.Oferta oferta = negocio.ToList().FirstOrDefault(x => x.IdOferta == id);
+                List<CapaDatos.Models.Oferta> oferta = negocio.ToList().Where(x => x.IdOferta == id).ToList();
                 return oferta;
             }
             catch (Exception)
