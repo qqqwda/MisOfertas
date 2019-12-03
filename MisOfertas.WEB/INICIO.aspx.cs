@@ -1,6 +1,7 @@
 ﻿using MisOfertas.CapaDatos.Models;
 using MisOfertas.CapaNegocio.Casos_de_Negocio;
 using System;
+using System.Collections.Generic;
 
 namespace MisOfertas.WEB
 {
@@ -13,23 +14,10 @@ namespace MisOfertas.WEB
            
             if (!IsPostBack)
             {
-                if((Usuario)Session["usuario"] != null )
-                {
-                    objUsuario = (Usuario)Session["usuario"];
-                    switch(objUsuario.TipoUsuario.IdTipoUsuario)
-                    {
-                        case 1:
-                            break;
-                        case 2:
-                            break;  
-                            //administrador
-                        case 3:
-                            
-                            break;
-                        default:
-                            break;
-                    }
-                }
+                List<string> lista = new List<string>() { "ola", "alo", "ole" };
+
+                dlProductos.DataSource = lista;
+                dlProductos.DataBind();
             }
         }
     }
