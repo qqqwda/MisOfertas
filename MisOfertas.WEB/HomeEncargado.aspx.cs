@@ -156,7 +156,7 @@ namespace MisOfertas.WEB
             int id = int.Parse(e.CommandArgument.ToString());
             NOferta noferta = new NOferta();
             noferta.Delete(id);
-            Response.Redirect("HomeGerente.aspx");
+            Response.Redirect("HomeEncargado.aspx");
         }
 
         protected void btneditar_Command(object sender, CommandEventArgs e)

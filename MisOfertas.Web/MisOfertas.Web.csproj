@@ -141,6 +141,7 @@
     <Content Include="js\sweetalert.min.js" />
     <Content Include="ListaProductos.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="MisPuntos.aspx" />
     <Content Include="Oferta.aspx" />
     <Content Include="OfertasHot.aspx" />
     <Content Include="OfertasProductos.aspx" />
@@ -1859,6 +1860,13 @@
     </Compile>
     <Compile Include="MasterPgePriv.Master.designer.cs">
       <DependentUpon>MasterPgePriv.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MisPuntos.aspx.cs">
+      <DependentUpon>MisPuntos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MisPuntos.aspx.designer.cs">
+      <DependentUpon>MisPuntos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Oferta.aspx.cs">
       <DependentUpon>Oferta.aspx</DependentUpon>

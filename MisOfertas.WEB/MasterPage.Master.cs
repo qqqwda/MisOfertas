@@ -29,7 +29,7 @@ namespace MisOfertas.WEB
             
             liCorreo.InnerHtml = "Inicio sesion con :"+" "+ objUsuario.Correo;
             //liCelular.InnerHtml = "su telefono"+objUsuario.Telefono.ToString();
-            liInicioSesion.InnerText = "Bienvenido "+ objUsuario.Nombre + " " +  objUsuario.Apellido;
+            liInicioSesion.InnerText = "Bienvenido/a "+ objUsuario.Nombre + " " +  objUsuario.Apellido;
         }
 
         protected void btnSuscribir_Click(object sender, EventArgs e)
