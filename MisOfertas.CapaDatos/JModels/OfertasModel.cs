@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace MisOfertas.CapaDatos.JModels
 {
-    public class ValoracionModel
+    public class OfertasModel
     {
-        public double Evaluacion { get; set; }
-        public int IdUsuario { get; set; }
-        public int IdOferta { get; set; }
-        
+        public List<OfertaHelper> ofertas { get; set; }
     }
 }

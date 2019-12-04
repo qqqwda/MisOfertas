@@ -1,4 +1,5 @@
 ﻿using MisOfertas.CapaNegocio.Casos_de_Negocio;
+using MisOfertas.CapaNegocio.Casos_de_Negocio_Web.Helper;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -23,7 +24,7 @@ namespace MisOfertas.WEB
         private void CargarCategorias()
         {
             NCategoria categorias = new NCategoria();
-            dlCategorias.DataSource = categorias.ToList();
+            dlCategorias.DataSource = Helper.ToCategoriaPuntuacion(categorias.ToList()).OrderBy(v => v.PromedioPuntuacion);
             dlCategorias.DataBind();
         }
 

@@ -1,4 +1,5 @@
 ﻿using MisOfertas.CapaDatos.Models;
+using MisOfertas.CapaNegocio.Casos_de_Negocio;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,7 +16,19 @@ namespace MisOfertas.WEB
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-           
+            NUsuario usuario = new NUsuario();
+            var sesion = (Usuario)Session["usuario"];
+
+            if (!IsPostBack && sesion != null)
+            {
+                
+                hPuntos.InnerText = "Porcentaje De Descuento/Mis Puntos. Usted tiene: "+sesion.Puntos.ToString()+" Puntos";
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+
         }
 
         protected void BtnExportarMisPuntos_Click(object sender, ImageClickEventArgs e)

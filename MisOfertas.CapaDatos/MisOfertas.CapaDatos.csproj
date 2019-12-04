@@ -49,12 +49,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonContext.cs" />
+    <Compile Include="JModels\CategoriaPuntuacionModel.cs" />
     <Compile Include="JModels\ComentarioModel.cs" />
     <Compile Include="JModels\EmpresaModel.cs" />
     <Compile Include="JModels\LocalModel.cs" />
     <Compile Include="JModels\OfertaHelper.cs" />
     <Compile Include="JModels\OfertaModel.cs" />
     <Compile Include="JModels\OfertaProductoModel.cs" />
+    <Compile Include="JModels\OfertasModel.cs" />
     <Compile Include="JModels\OpinionOfertaModel.cs" />
     <Compile Include="JModels\ProductoModel.cs" />
     <Compile Include="JModels\UsuarioModel.cs" />
