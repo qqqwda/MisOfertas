@@ -165,6 +165,7 @@
     <Compile Include="Controllers\OfertaController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\SubirArchivoController.cs" />
+    <Compile Include="Controllers\SubirBoletaController.cs" />
     <Compile Include="Controllers\TipoUsuarioController.cs" />
     <Compile Include="Controllers\UserLoginController.cs" />
     <Compile Include="Controllers\UsersController.cs" />

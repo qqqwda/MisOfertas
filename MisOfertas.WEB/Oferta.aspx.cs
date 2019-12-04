@@ -4,7 +4,12 @@ using MisOfertas.CapaNegocio.Casos_de_Negocio;
 using MisOfertas.CapaNegocio.Casos_de_Negocio_Web.Helper;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -78,6 +83,8 @@ namespace MisOfertas.WEB
             valoracion.IdUsuario = sesion.IdUsuario;
             
             negocioValoracion.Create(valoracion);
+
+            
             
         }
 
@@ -88,7 +95,26 @@ namespace MisOfertas.WEB
             {
                 AgregarComentario();
                 string id = Request.QueryString["id"];
+                
+                NOpinionOferta opiniones = new NOpinionOferta();
+                int idOpinion = opiniones.ToList().OrderByDescending(o => o.IdOpinionOferta).FirstOrDefault().IdOpinionOferta;
+                var url = "http://ofertasportafoli-001-site1.dtempurl.com/api/subirBoleta/";
+                try
+                {
+                    Helper.UploadMultipart(fBoleta.FileBytes, fBoleta.FileName, "form-data", url, idOpinion.ToString());
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                
+
+
+
                 Response.Redirect("Oferta.aspx?id=" + id);
+
+                
             }
             else
             {
@@ -96,5 +122,9 @@ namespace MisOfertas.WEB
             }
             
         }
+
+        
+
+
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Oferta.aspx.cs" Inherits="MisOfertas.WEB.Oferta" %>
+﻿<%@ Page Async="true" Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Oferta.aspx.cs" Inherits="MisOfertas.WEB.Oferta" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
@@ -312,7 +312,9 @@
                                                               <option>5</option>
                                                             </select>
                                                         <p>Suba Una Imagen De Su Boleta, Para Una Correcta Valoracion</p>
-                                          <asp:FileUpload ID="FileUpload1"  runat="server" />
+                                          <asp:FileUpload ID="fBoleta"  runat="server" />
+                                                        
+
 													</div>
                                                     <br />
                                                     <br />

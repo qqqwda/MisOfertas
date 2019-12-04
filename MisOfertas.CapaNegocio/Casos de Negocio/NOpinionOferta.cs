@@ -28,6 +28,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
                 var puntosActuales = Bd.Usuarios.FirstOrDefault(u => u.IdUsuario == opinion.IdUsuario).Puntos;
                 Bd.Usuarios.FirstOrDefault(u => u.IdUsuario == opinion.IdUsuario).Puntos = puntosActuales + 5;
                 Bd.SaveChanges();
+
                 return new Response<OpinionOferta> { Answer = null, IsSuccess = true, Message = "Comentario agregado correctamente" };
             }
             catch (Exception ex)
@@ -36,6 +37,22 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
                 return new Response<OpinionOferta> { Answer = null, IsSuccess = false, Message = "Error al cargar comentario: "+ex.Message };
             }
             
+        }
+
+        public string AgregarImagen(string nombreImagen, int id)
+        {
+            try
+            {
+
+                Bd.Database.ExecuteSqlCommand($"UPDATE OpinionOfertas SET Imagen='{nombreImagen}'  WHERE IdOpinionOferta = {id}");
+                Bd.SaveChanges();
+                return "Registrado en la bd con éxito";
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
         }
 
         public Response<OpinionOferta> Create(OpinionOferta obj)
@@ -50,7 +67,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
 
         public List<OpinionOferta> ToList()
         {
-            throw new NotImplementedException();
+            return Bd.OpinionOfertas.ToList();
         }
 
         public Response<OpinionOferta> Update(int id, OpinionOferta obj)
