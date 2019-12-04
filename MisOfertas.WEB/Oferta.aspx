@@ -278,10 +278,15 @@
                                                            </div>
 																<%--<a href="#"><%#Eval("sCalificacion")%>'</a>--%>
 															</div>
-														
+														  
 														<div class="review-body">
 															<p><%#Eval("Comentario")%>'</p>
 														</div>
+                                                        <div id="product-main-img">
+                                                         <div class="product-preview">
+                                                       <img src="<%#Eval("Imagen")%>" alt="" width="210" height="220"/>
+                                                       </div>
+                                                            </div>
 													</li>
 												</ul>
                                                     </ItemTemplate>
@@ -313,13 +318,12 @@
                                                             </select>
                                                         <p>Suba Una Imagen De Su Boleta, Para Una Correcta Valoracion</p>
                                           <asp:FileUpload ID="fBoleta"  runat="server" />
-                                                        
-
+                                                 
 													</div>
                                                     <br />
                                                     <br />
 													<asp:button OnClick="PublicarComentario_Click" Text="Publicar Comentario" id="PublicarComentario" runat="server" class="primary-btn"></asp:button>
-											
+											<br />
 											</div>
 										</div>
                                           <br />

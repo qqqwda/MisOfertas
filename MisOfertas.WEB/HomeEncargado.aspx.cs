@@ -41,16 +41,7 @@ namespace MisOfertas.WEB
             GvOfertas.DataBind();
 
             NOferta negocioOferta = new NOferta();
-            ddlOferta.DataSource = negocioOferta.ToList();
-
-            ddlOferta.Items.Add(new ListItem("Seleccione Un Producto a editar", "0"));
-
-            foreach (var item in negocioOferta.ToList())
-            {
-                ListItem i = new ListItem(item.Descripcion, item.IdOferta.ToString());
-                ddlOferta.Items.Add(i);
-
-            }
+          
         }
 
         protected void BtnExportarExcel_Click(object sender, ImageClickEventArgs e)
@@ -115,41 +106,38 @@ namespace MisOfertas.WEB
 
         }
 
-        protected void btneditar_Click(object sender, EventArgs e)
-        {
-            pnlEditar.Visible = true;
-            hdfEditar.Value = "1";
-            CargarEditar(int.Parse(hdfEditar.Value.ToString()));
-        }
+        //protected void btneditar_Click(object sender, EventArgs e)
+        //{
+        //    pnlEditar.Visible = true;
+        //    hdfEditar.Value = "1";
+        //    CargarEditar(int.Parse(hdfEditar.Value.ToString()));
+        //}
 
-        private void CargarEditar(int IDOferta)
-        {
-            NOferta oferta = new NOferta();
-            var objOferta = oferta.Traer(IDOferta);
-            txteditar.Text = objOferta.Descripcion;
-        }
+        //private void CargarEditar(int IDOferta)
+        //{
+        //    NOferta oferta = new NOferta();
+        //    var objOferta = oferta.Traer(IDOferta);
+        //    txteditar.Text = objOferta.Descripcion;
+        //}
 
-        protected void btnGuardarEditar_Click(object sender, EventArgs e)
-        {
-            NOferta oferta = new NOferta();
-            var objOferta = oferta.Traer(int.Parse(hdfEditar.Value.ToString()));
-            objOferta.Descripcion = txteditar.Text;
+        //protected void btnGuardarEditar_Click(object sender, EventArgs e)
+        //{
+        //    NOferta oferta = new NOferta();
+        //    var objOferta = oferta.Traer(int.Parse(hdfEditar.Value.ToString()));
+        //    objOferta.Descripcion = txteditar.Text;
 
-            if (oferta.Update(objOferta))
-            {
-                string fun = "funciono";
-                CargarGV();
-            }
-            else
-            {
+        //    if (oferta.Update(objOferta))
+        //    {
+        //        string fun = "funciono";
+        //        CargarGV();
+        //    }
+        //    else
+        //    {
 
-            }
-        }
+        //    }
+        //}
 
-        protected void editarOferta_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         protected void btnEliminar_Command(object sender, CommandEventArgs e)
         {
@@ -159,11 +147,12 @@ namespace MisOfertas.WEB
             Response.Redirect("HomeEncargado.aspx");
         }
 
-        protected void btneditar_Command(object sender, CommandEventArgs e)
-        {
-            int id = int.Parse(e.CommandArgument.ToString());
-            Response.Redirect("EditarOferta.aspx?id=" + id);
-        }
+        //protected void btneditar_Command(object sender, CommandEventArgs e)
+        //{
+        //    int id = int.Parse(e.CommandArgument.ToString());
+        //    Response.Redirect("EditarOferta.aspx?id=" + id);
+        //}
+
 
         protected void GvOfertas_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
@@ -173,6 +162,12 @@ namespace MisOfertas.WEB
         protected void GvOfertas_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btneditar_Command1(object sender, CommandEventArgs e)
+        {
+            int id = int.Parse(e.CommandArgument.ToString());
+            Response.Redirect("EditarOferta.aspx?id=" + id);
         }
     }
 }

@@ -22,7 +22,7 @@
   
 	
     
-    <asp:DataList ID="dlCategorias" runat="server">
+    <asp:DataList ID="dlCategorias" runat="server" Height="117px" Width="143px"  RepeatColumns="2"  CssClass="cent" ShowHeader="False" GridLines="Horizontal" HorizontalAlign="Left" RepeatDirection="Horizontal" ShowFooter="False" CellPadding="0" CellSpacing="0">
      
     
     
@@ -31,19 +31,17 @@
     
     
         <ItemTemplate>
-            <div class="section">
+                  <div class="section-center">
             <!-- container -->
             <div class="container">
                 <!-- row -->
-                <div class="row">
+               <div class="row">
             <div class="col-md-12">
-                        <div class="row">
-                            <div class="products-tabs">
-                                <!-- tab -->
-                                <div id="tab1" class="tab-pane active">
-                                    <div class="products-slick" data-nav="#slick-nav-1">
-                                        <!-- product -->   
-                                        
+                      	<div class="section-title text-center">
+							<h3 class="title"></h3>
+						</div>  <%--<div class="col-md-3 col-x-6">--%>
+					</div>
+                                     <div class="col-md-3 col-xs-offset-1">
 
 										<div class="product">
 											<div class="product-img">
