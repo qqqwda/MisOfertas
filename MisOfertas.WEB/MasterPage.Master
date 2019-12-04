@@ -51,9 +51,11 @@
 						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Casa Central DUOC UC MisOfertas</a></li>
 					</ul>
 					<ul class="header-links pull-right">
-						<li><a href="RegistrarUser.aspx"><i class="fa-times-rectangle"></i> Registrarse</a></li>
+						<li><a runat="server" id="liSacarRegistrar" href="RegistrarUser.aspx"><i class="fa-times-rectangle"></i> Registrarse</a></li>
 						<li><a runat="server" id="liInicioSesion" href="Login.aspx"><i class="fa fa-user-o"></i> Iniciar SESION MisOfertas</a></li>
+                         <li><a runat="server" id="liCerrarSesion" href="Salir.aspx"><i class="fa fa-user-circle-o"></i></a></li>
 					</ul>
+                      
 				</div>
 			</div>
 			<!-- /TOP HEADER -->
@@ -178,10 +180,10 @@
 						<li class="active"><a href="INICIO.aspx">Inicio</a></li>
 						<li><a href="OfertasHot.aspx">Ofertas del dia</a></li>
 						<li><a href="categorias.aspx">Categorias</a></li>
-						<li><a href="#">Mas Visto</a></li>
+						<%--<li><a href="#">Mas Visto</a></li>--%>
 						<li><a href="#">Smartphones</a></li>
-						<li><a href="MisPuntos.aspx">Mis Puntos </a></li>
-						<li><a href="#">Accessorios</a></li>
+						<li><a runat="server" id="liSacarPuntoXlogeo" href="MisPuntos.aspx"></a></li>
+						<%--<li><a href="#">Accessorios</a></li>--%>
                         <li><a href="OfertasProductos.aspx">Relacion Con su Busqueda</a></li>
                         <li><a href="Ayuda.aspx">Ayuda</a></li>
 

@@ -67,6 +67,8 @@
 						</div>
 						
 						<asp:Button ID="BtnActualizarOferta" class="primary-btn order-submit" runat="server" Text="ACTUALIZAR OFERTA" Width="417px" OnClick="BtnActualizarOferta_Click" />
+                        <br />
+                        <br />
                         <asp:Button ID="BtnEliminarOferta" class="primary-btn order-submit" runat="server" Text="ELIMINAR OFERTA" Width="417px" OnClick="BtnEliminarOferta_Click" />
                         
 					</div>

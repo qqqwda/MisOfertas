@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web;
 
 namespace MisOfertas.WEB
 {
@@ -6,7 +7,9 @@ namespace MisOfertas.WEB
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("INICIO.aspx");
+            Session.Abandon();
+            //Response.Cookies.Add(new HttpCookie("ASP.NET_SessionId", ""));
+            Response.Redirect("Login.aspx");
         }
     }
 }

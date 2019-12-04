@@ -34,6 +34,7 @@ namespace MisOfertas.WEB
 
            
             liInicioSesion.InnerText = "Bienvenido/En Sesion: " + objUsuario.Nombre + " " + objUsuario.Apellido;
+            cargaNombre.InnerText = "Bienvenido/a Encargado :" + objUsuario.Nombre;
         }
     }
 }

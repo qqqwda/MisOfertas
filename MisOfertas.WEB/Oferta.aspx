@@ -308,7 +308,7 @@
 
 													<div class="input-rating">
 														<%--<span>Tu Calificacion: </span>--%>
-														<label for="exampleFormControlSelect1">Seleccione un numero para calificar 1 MALISIMO-2 MEDIO-3 REGULAR-4 BUENO-5 EXCELENTE</label>
+														<label for="exampleFormControlSelect1">Seleccione un numero para calificar 1 MALO-2 MEDIO-3 REGULAR-4 BUENO-5 EXCELENTE</label>
                                                             <select runat="server" class="form-control" id="sCalificacion">
                                                               <option>1</option>
                                                               <option>2</option>

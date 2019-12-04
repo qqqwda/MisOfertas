@@ -18,8 +18,9 @@ namespace MisOfertas.WEB
 
                     objUsuario = (Usuario)Session["usuario"];
                     CargarDefault(objUsuario);
-                   
+
                 }
+                //Session.Abandon");
             }
         }
             
@@ -29,7 +30,10 @@ namespace MisOfertas.WEB
             
             liCorreo.InnerHtml = "Inicio sesion con :"+" "+ objUsuario.Correo;
             //liCelular.InnerHtml = "su telefono"+objUsuario.Telefono.ToString();
-            liInicioSesion.InnerText = "Bienvenido/a "+ objUsuario.Nombre + " " +  objUsuario.Apellido;
+            liInicioSesion.InnerText = "Bienvenido/a " + objUsuario.Nombre + " " +  objUsuario.Apellido;
+            liCerrarSesion.InnerText = "Cerrar Session"  +" "+ objUsuario.Nombre;
+            liSacarRegistrar.InnerText = " ";
+            liSacarPuntoXlogeo.InnerText = "Mis Puntos";
         }
 
         protected void btnSuscribir_Click(object sender, EventArgs e)
