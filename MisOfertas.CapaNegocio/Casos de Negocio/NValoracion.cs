@@ -45,7 +45,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
 
         public List<Valoracion> ToList()
         {
-            throw new NotImplementedException();
+            return Bd.Valoraciones.ToList();
         }
 
         public Response<Valoracion> Update(int id, Valoracion obj)

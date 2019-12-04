@@ -40,7 +40,7 @@ namespace MisOfertas.API.Controllers
                     var filePath = Path.Combine(root, name);
                     File.Move(localFileName, filePath);
                 }
-                Uri baseUri = new Uri("http://ofertasportafoli-001-site1.dtempurl.com/imagesproducto/");
+                Uri baseUri = new Uri("http://ofertasportafoli-001-site1.dtempurl.com/imagesBoleta/");
                 var nombreImagen = provider.FileData[0].Headers.ContentDisposition.FileName.ToString().Replace("\"", string.Empty);
                 Uri myUri = new Uri(baseUri, nombreImagen);
                 var response = negocio.AgregarImagen(myUri.AbsoluteUri, id);

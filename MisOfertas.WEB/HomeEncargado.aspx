@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPgePriv.Master" AutoEventWireup="true" CodeBehind="HomeEncargado.aspx.cs" Inherits="MisOfertas.WEB.HomeGerente" %>
+﻿<%@ Page Title="" EnableEventValidation="false" Language="C#" MasterPageFile="~/MasterPgePriv.Master" AutoEventWireup="true" CodeBehind="HomeEncargado.aspx.cs" Inherits="MisOfertas.WEB.HomeGerente" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -14,12 +14,12 @@
      <div class="card-body">
          <div class="table-responsive" id="dataTable">
              <div aria-controls="dataTable" class="sorting">
-                
-                 <asp:ImageButton ID="BtnExportarExcel" runat="server" ImageUrl="~/Img/Excel.png" Height="88px" Width="94px" style="margin-left: 301px" OnClick="BtnExportarExcel_Click"/>
-                    
-                  <asp:ImageButton ID="btntxt" runat="server" ImageUrl="~/Img/Note.jfif" Height="88px" Width="94px" style="margin-left: 301px" OnClick="btntxt_Click"/>
-                 <br />
-                 <br />
+                 
+                     <asp:ImageButton ID="BtnExportarExcel" runat="server" ImageUrl="~/Img/Excel.png" Height="88px" Width="94px" Style="margin-left: 301px" OnClick="BtnExportarExcel_Click" />
+
+                     <asp:ImageButton ID="btntxt" runat="server" ImageUrl="~/Img/Note.jfif" Height="88px" Width="94px" Style="margin-left: 301px" OnClick="btntxt_Click" />
+                     <br />
+                     <br />
 
             <asp:GridView  ID="GvOfertas" runat="server" Width ="80%"  CssClass="table table-bordered"  AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="GvOfertas_PageIndexChanging" PageSize="25" OnSelectedIndexChanged="GvOfertas_SelectedIndexChanged">
                     <Columns>

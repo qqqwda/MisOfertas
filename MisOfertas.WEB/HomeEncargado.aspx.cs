@@ -105,6 +105,11 @@ namespace MisOfertas.WEB
 
 
         }
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            /* Confirms that an HtmlForm control is rendered for the specified ASP.NET
+               server control at run time. */
+        }
 
         //protected void btneditar_Click(object sender, EventArgs e)
         //{
@@ -137,7 +142,7 @@ namespace MisOfertas.WEB
         //    }
         //}
 
-        
+
 
         protected void btnEliminar_Command(object sender, CommandEventArgs e)
         {

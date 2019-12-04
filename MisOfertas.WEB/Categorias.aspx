@@ -56,11 +56,7 @@
 												<%--<h3 class="product-category">'<%#Eval("Descripcion")%>'</h3>--%>
 												<%--<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>--%>
 												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
+													<h3 id="hPuntuacion">'<%#Eval("PromedioPuntuacion")%>'</h3>
 												</div>
 												<%--<div class="product-btns">
 													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a favoritos</span></button>
