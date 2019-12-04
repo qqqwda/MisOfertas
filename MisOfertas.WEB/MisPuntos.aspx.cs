@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MisOfertas.CapaDatos.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,11 +15,7 @@ namespace MisOfertas.WEB
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-            if (!IsPostBack)
-            {
-                string id = Request.QueryString["id"];
-                //TraerPuntos(id);
-            }
+           
         }
 
         protected void BtnExportarMisPuntos_Click(object sender, ImageClickEventArgs e)
@@ -46,6 +43,13 @@ namespace MisOfertas.WEB
             response.Write(sw.ToString());
             response.End();
         }
+
+
+
+
+
+        
+
 
 
     }

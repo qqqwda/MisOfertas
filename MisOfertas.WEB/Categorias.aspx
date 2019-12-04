@@ -37,7 +37,7 @@
                 <!-- row -->
                 <div class="row">
             <div class="col-md-12">
-                        <div class="r ow">
+                        <div class="row">
                             <div class="products-tabs">
                                 <!-- tab -->
                                 <div id="tab1" class="tab-pane active">

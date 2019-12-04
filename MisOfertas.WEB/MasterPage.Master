@@ -180,7 +180,7 @@
 						<li><a href="categorias.aspx">Categorias</a></li>
 						<li><a href="#">Mas Visto</a></li>
 						<li><a href="#">Smartphones</a></li>
-						<li><a href="#">Mis Puntos </a></li>
+						<li><a href="MisPuntos.aspx">Mis Puntos </a></li>
 						<li><a href="#">Accessorios</a></li>
                         <li><a href="OfertasProductos.aspx">Relacion Con su Busqueda</a></li>
                         <li><a href="Ayuda.aspx">Ayuda</a></li>

@@ -143,7 +143,7 @@
 							<ul class="tab-nav">
 								<li class="active"><a data-toggle="tab" href="#tab1">Descripcion Oferta</a></li>
 								<li><a data-toggle="tab" href="#tab2">Detalles Producto</a></li>
-								<li><a data-toggle="tab" href="#tab3">Calificaciones (3)</a></li>
+								<li><a data-toggle="tab" href="#tab3">Calificaciones</a></li>
 							</ul>
 							<!-- /product tab nav -->
 
@@ -260,7 +260,7 @@
     </asp:DataList>
 										<!-- Reviews -->
 										<div class="col-md-6">
-                                            <asp:DataList ID="dlComentarios" runat="server">
+                                            <asp:DataList ID="dlComentarios" runat="server" >
                                                 
                                                     <ItemTemplate>
 											<div id="reviews">
@@ -271,14 +271,14 @@
 														<div class="review-heading">
 															<h5 class="name">'<%#Eval("NombreCompleto")%>'</h5>
 															<p class="date">'<%#Eval("FechaPublicacion")%>'</p>
-															<div class="review-rating">
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star-o empty"></i>
+                                                            <div class="review-rating">
+<%--			                                         <asp:Label ID="Label1" runat="server" Text="Calificacion:"></asp:Label>--%>
+                                                            <i class="fa fa-star"></i>
+														    <i class="fa fa-star"></i>
+                                                           </div>
+																<%--<a href="#"><%#Eval("sCalificacion")%>'</a>--%>
 															</div>
-														</div>
+														
 														<div class="review-body">
 															<p><%#Eval("Comentario")%>'</p>
 														</div>
@@ -288,21 +288,22 @@
 												</asp:DataList>
 												
 											</div>
-										</div>
+										
+    
 										<!-- /Reviews -->
 
 										<!-- Review Form -->
 										<div class="col-md-3">
 											<div id="review-form">
-												<form class="review-form">
+											
 
 
-                                                    <textarea id="txtComentario" class="input" placeholder="Escribe un comentario" runat="server" cols="20" rows="2"></textarea>
+                                                    <textarea id="txtComentario" class="input" placeholder="Escribe Aqui Tu Comentario Acerca Del Producto" runat="server" cols="20" rows="2"></textarea>
 													
 
 													<div class="input-rating">
-														<span>Tu Calificacion: </span>
-														<label for="exampleFormControlSelect1">Example select</label>
+														<%--<span>Tu Calificacion: </span>--%>
+														<label for="exampleFormControlSelect1">Seleccione un numero para calificar 1 MALISIMO-2 MEDIO-3 REGULAR-4 BUENO-5 EXCELENTE</label>
                                                             <select runat="server" class="form-control" id="sCalificacion">
                                                               <option>1</option>
                                                               <option>2</option>
@@ -310,27 +311,19 @@
                                                               <option>4</option>
                                                               <option>5</option>
                                                             </select>
+                                                        <p>Suba Una Imagen De Su Boleta, Para Una Correcta Valoracion</p>
                                           <asp:FileUpload ID="FileUpload1"  runat="server" />
 													</div>
-													<asp:button OnClick="PublicarComentario_Click" id="PublicarComentario" runat="server" class="primary-btn"></asp:button>
-												</form>
+                                                    <br />
+                                                    <br />
+													<asp:button OnClick="PublicarComentario_Click" Text="Publicar Comentario" id="PublicarComentario" runat="server" class="primary-btn"></asp:button>
+											
 											</div>
 										</div>
+                                          <br />
+    <br />
 										<!-- /Review Form -->
-									</div>
-								</div>
-								<!-- /tab3  -->
-							</div>
-							<!-- /product tab content  -->
-						</div>
-					</div>
-					<!-- /Product PANEL ABAJO NAVEGA Y COMENT -->
-
-
-                    </div>
-                </div>
-            </div>
-
+					
 
 
 
