@@ -149,6 +149,7 @@ namespace MisOfertas.WEB
             int id = int.Parse(e.CommandArgument.ToString());
             NOferta noferta = new NOferta();
             noferta.Delete(id);
+            ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal('Se Ha eliminado con exito la oferta!', 'Felicidades, Presione Ok!', 'success') </script>");
             Response.Redirect("HomeEncargado.aspx");
         }
 
@@ -173,6 +174,7 @@ namespace MisOfertas.WEB
         {
             int id = int.Parse(e.CommandArgument.ToString());
             Response.Redirect("EditarOferta.aspx?id=" + id);
+
         }
     }
 }

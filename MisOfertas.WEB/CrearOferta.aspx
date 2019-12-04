@@ -81,7 +81,7 @@
 							</div>
 						</div>
 						
-						<asp:Button ID="BtnAgregarOferta" class="primary-btn order-submit" runat="server" Text="CREAR NUEVA OFERTA" Width="417px" OnClick="BtnAgregarOferta_Click" />
+						<asp:Button ID="BtnAgregarOferta" class="primary-btn order-submit" runat="server" Text="CREAR NUEVA OFERTA" Width="417px" OnClick="BtnAgregarOferta_Click"  OnClientClick="return confirm('¿Esta seguro que desea Agregar Una Nueva Oferta?');"/>
                         
 					</div>
 					<!-- /Order Details -->

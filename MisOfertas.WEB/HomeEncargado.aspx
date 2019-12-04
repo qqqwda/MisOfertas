@@ -31,13 +31,13 @@
                          <asp:BoundField DataField="PorcentajeDescuento" HeaderText="Porcentaje Descuento" />
                         <asp:TemplateField ShowHeader="False">
                             <ItemTemplate>
-                                <asp:ImageButton ID="btneditar" runat="server" ImageUrl="https://cdn.discordapp.com/attachments/647215602452135936/649830205602529280/user_edit.png" CausesValidation="False" OnCommand="btneditar_Command1" CommandArgument='<% #Eval("IdOferta")%> ' CommandName="Editar" Text="Editar" />
+                                <asp:ImageButton ID="btneditar" runat="server" ImageUrl="https://cdn.discordapp.com/attachments/647215602452135936/649830205602529280/user_edit.png" CausesValidation="False" OnCommand="btneditar_Command1" CommandArgument='<% #Eval("IdOferta")%> ' CommandName="Editar" Text="Editar" OnClientClick="return confirm('¿Esta seguro que desea Editar esta oferta?');"/>
                             </ItemTemplate>
                              <ControlStyle Height="43px" Width="60px" />
                         </asp:TemplateField>
                         <asp:TemplateField ShowHeader="False">
                             <ItemTemplate>
-                                <asp:ImageButton ID="btnEliminar" runat="server" ImageUrl="https://cdn.discordapp.com/attachments/647215602452135936/649830202167263251/delete.png" CausesValidation="False" OnCommand="btnEliminar_Command" CommandArgument='<% #Eval("IdOferta")%> ' CommandName="Eliminar" Text="Eliminar"  OnClientClick="return confirm('¿Esta seguro que desea eliminar este usuario?');"/>
+                                <asp:ImageButton ID="btnEliminar" runat="server" ImageUrl="https://cdn.discordapp.com/attachments/647215602452135936/649830202167263251/delete.png" CausesValidation="False" OnCommand="btnEliminar_Command" CommandArgument='<% #Eval("IdOferta")%> ' CommandName="Eliminar" Text="Eliminar"  OnClientClick="return confirm('¿Esta seguro que desea Eliminar esta oferta?');"/>
                             </ItemTemplate>
                              <ControlStyle Height="43px" Width="60px" />
                         </asp:TemplateField>

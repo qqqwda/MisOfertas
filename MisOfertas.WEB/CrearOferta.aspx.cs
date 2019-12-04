@@ -59,8 +59,8 @@ namespace MisOfertas.WEB
             NOferta onOfertas = new NOferta();
 
             onOfertas.Create(ofertaModel);
-
-
+            Response.Redirect("HomeEncargado.aspx")
+;
 
 
 

@@ -66,10 +66,10 @@
 							
 						</div>
 						
-						<asp:Button ID="BtnActualizarOferta" class="primary-btn order-submit" runat="server" Text="ACTUALIZAR OFERTA" Width="417px" OnClick="BtnActualizarOferta_Click" />
+						<asp:Button ID="BtnActualizarOferta" class="primary-btn order-submit" runat="server" Text="ACTUALIZAR OFERTA" Width="417px" OnClick="BtnActualizarOferta_Click" OnClientClick="return confirm('¿Esta seguro que desea Actualizar Y guardar cambios en esta oferta?');"/>
                         <br />
                         <br />
-                        <asp:Button ID="BtnEliminarOferta" class="primary-btn order-submit" runat="server" Text="ELIMINAR OFERTA" Width="417px" OnClick="BtnEliminarOferta_Click" />
+                        <asp:Button ID="BtnEliminarOferta" class="primary-btn order-submit" runat="server" Text="ELIMINAR OFERTA" Width="417px" OnClick="BtnEliminarOferta_Click" OnClientClick="return confirm('¿Esta seguro que desea eliminar por completo esta oferta?');"/>
                         
 					</div>
 					<!-- /Order Details -->

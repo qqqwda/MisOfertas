@@ -68,7 +68,7 @@ namespace MisOfertas.WEB
                 if (correo.Equals("txtCorreo") == false)
                 {
                 //System.Net.Mail.Attachment archivo = new Attachment("C:/Users/CRISTOPHER/Desktop/DEMRE/BUENA.pdf");
-                correos.Attachments.Add(new Attachment("C:/Users/CRISTOPHER/Desktop/DEMRE/MisOfertas.png")); 
+                correos.Attachments.Add(new Attachment("~/Img/MisOfertas.png")); 
                 }
 
                 correos.From = new MailAddress("ofertas.portafolio@gmail.com");

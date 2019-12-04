@@ -97,22 +97,22 @@
 						<div class="col-md-3 clearfix">
 							<div class="header-ctn">
 								<!-- Wishlist -->
-								<div>
+								<%--<div>
 									<a href="#">
 										<i class="fa fa-heart-o"></i>
 										<span>Tus Favoritos</span>
 										<div class="qty">12</div>
 									</a>
-								</div>
+								</div>--%>
 								<!-- /Wishlist -->
 
 								<!-- Cart -->
 							<div>
-									<a href="#">
+									<%--<a href="#">
 										<i class="fa fa-shopping-cart"></i>
 										<span>Tus Productos</span>
 										<div class="qty">3</div>
-									</a>
+									</a>--%>
 									<div class="cart-dropdown">
 										<div class="cart-list">
 											<div class="product-widget">
@@ -181,7 +181,7 @@
 						<li><a href="OfertasHot.aspx">Ofertas del dia</a></li>
 						<li><a href="categorias.aspx">Categorias</a></li>
 						<%--<li><a href="#">Mas Visto</a></li>--%>
-						<li><a href="#">Smartphones</a></li>
+					<%--	<li><a href="#">Smartphones</a></li>--%>
 						<li><a runat="server" id="liSacarPuntoXlogeo" href="MisPuntos.aspx"></a></li>
 						<%--<li><a href="#">Accessorios</a></li>--%>
                         <li><a href="OfertasProductos.aspx">Relacion Con su Busqueda</a></li>
