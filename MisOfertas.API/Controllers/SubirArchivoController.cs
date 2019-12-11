@@ -1,9 +1,7 @@
 ﻿using MisOfertas.CapaNegocio.Casos_de_Negocio;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
@@ -45,16 +43,16 @@ namespace MisOfertas.API.Controllers
                 Uri myUri = new Uri(baseUri, nombreImagen);
                 var response = negocio.AgregarImagen(myUri.AbsoluteUri, id);
 
-                return "Archivo"+provider.FileData.First().Headers.ContentDisposition.FileName.ToString()+" agregado y "+response;
+                return "Archivo" + provider.FileData.First().Headers.ContentDisposition.FileName.ToString() + " agregado y " + response;
             }
             catch (Exception ex)
             {
 
                 return $"Error:{ex.Message }";
             }
-            
+
         }
 
-        
+
     }
 }

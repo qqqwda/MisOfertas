@@ -4,8 +4,6 @@ using MisOfertas.CapaDatos.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MisOfertas.CapaNegocio.Casos_de_Negocio
 {
@@ -65,7 +63,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
             this.Bd.SaveChanges();
 
             return new Response<Empresa> { Answer = empresaModel, IsSuccess = true, Message = "Empresa creada correctamente" };
-           
+
 
         }
 
@@ -81,13 +79,13 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
                 var empresa = this.Bd.Empresas.FirstOrDefault(e => e.IdEmpresa == id);
                 this.Bd.Empresas.Remove(empresa);
                 this.Bd.SaveChanges();
-                return new Response<Empresa> { IsSuccess= true, Answer = empresa, Message="Empresa eliminada"};
+                return new Response<Empresa> { IsSuccess = true, Answer = empresa, Message = "Empresa eliminada" };
             }
             catch (Exception)
             {
                 return new Response<Empresa> { IsSuccess = false, Answer = null, Message = "Empresa no pudo ser eliminada" };
             }
-            
+
         }
 
         public List<Empresa> ToList()
@@ -108,7 +106,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
         {
             throw new NotImplementedException();
         }
-        public Response<Empresa> Update(int id,EmpresaModel empresa)
+        public Response<Empresa> Update(int id, EmpresaModel empresa)
         {
             try
             {
@@ -123,7 +121,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
                 emp.Nombre = empresa.Nombre;
                 Bd.SaveChanges();
 
-                return new Response<Empresa> { Answer=emp,IsSuccess=true, Message="Usuario actualizado correctamente" };
+                return new Response<Empresa> { Answer = emp, IsSuccess = true, Message = "Usuario actualizado correctamente" };
 
             }
             catch (Exception ex)

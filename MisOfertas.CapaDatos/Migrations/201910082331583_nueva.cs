@@ -1,8 +1,7 @@
 namespace MisOfertas.CapaDatos.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class nueva : DbMigration
     {
         public override void Up()
@@ -43,106 +42,106 @@ namespace MisOfertas.CapaDatos.Migrations
             DropTable("dbo.Opinions");
             DropTable("dbo.Puntos");
         }
-        
+
         public override void Down()
         {
             CreateTable(
                 "dbo.Puntos",
                 c => new
-                    {
-                        IdPuntos = c.Int(nullable: false, identity: true),
-                        CantidadPuntos = c.Int(nullable: false),
-                        Usuario_IdUsuario = c.Int(),
-                    })
+                {
+                    IdPuntos = c.Int(nullable: false, identity: true),
+                    CantidadPuntos = c.Int(nullable: false),
+                    Usuario_IdUsuario = c.Int(),
+                })
                 .PrimaryKey(t => t.IdPuntos);
-            
+
             CreateTable(
                 "dbo.Opinions",
                 c => new
-                    {
-                        IdOpinion = c.Int(nullable: false, identity: true),
-                        Valoracion = c.Double(nullable: false),
-                        Imagen = c.String(),
-                        FechaPublicacion = c.DateTime(nullable: false),
-                        ProductoId = c.Int(),
-                        UsuarioId = c.Int(),
-                        Producto_IdProducto = c.Int(),
-                        Usuario_IdUsuario = c.Int(),
-                    })
+                {
+                    IdOpinion = c.Int(nullable: false, identity: true),
+                    Valoracion = c.Double(nullable: false),
+                    Imagen = c.String(),
+                    FechaPublicacion = c.DateTime(nullable: false),
+                    ProductoId = c.Int(),
+                    UsuarioId = c.Int(),
+                    Producto_IdProducto = c.Int(),
+                    Usuario_IdUsuario = c.Int(),
+                })
                 .PrimaryKey(t => t.IdOpinion);
-            
+
             CreateTable(
                 "dbo.Locals",
                 c => new
-                    {
-                        IdLocal = c.Int(nullable: false, identity: true),
-                        Descripcion = c.String(),
-                        Direccion = c.String(),
-                        EmpresaId = c.Int(nullable: false),
-                        Empresa_IdEmpresa = c.Int(nullable: false),
-                    })
+                {
+                    IdLocal = c.Int(nullable: false, identity: true),
+                    Descripcion = c.String(),
+                    Direccion = c.String(),
+                    EmpresaId = c.Int(nullable: false),
+                    Empresa_IdEmpresa = c.Int(nullable: false),
+                })
                 .PrimaryKey(t => t.IdLocal);
-            
+
             CreateTable(
                 "dbo.Empresas",
                 c => new
-                    {
-                        IdEmpresa = c.Int(nullable: false, identity: true),
-                        Rut = c.String(),
-                        Logo = c.String(),
-                        Correo = c.String(),
-                        Direccion = c.String(),
-                        Numero = c.Int(nullable: false),
-                    })
+                {
+                    IdEmpresa = c.Int(nullable: false, identity: true),
+                    Rut = c.String(),
+                    Logo = c.String(),
+                    Correo = c.String(),
+                    Direccion = c.String(),
+                    Numero = c.Int(nullable: false),
+                })
                 .PrimaryKey(t => t.IdEmpresa);
-            
+
             CreateTable(
                 "dbo.EncargadoVentas",
                 c => new
-                    {
-                        IdEncargadoVentas = c.Int(nullable: false, identity: true),
-                        Rut = c.String(),
-                        Nombre = c.String(),
-                        Apellidos = c.String(),
-                        Correo = c.String(),
-                        Contrasena = c.String(),
-                        RespuestaSecreta = c.String(),
-                        Telefono = c.Int(nullable: false),
-                        FechaNacimiento = c.DateTime(nullable: false),
-                        Empresa_IdEmpresa = c.Int(),
-                    })
+                {
+                    IdEncargadoVentas = c.Int(nullable: false, identity: true),
+                    Rut = c.String(),
+                    Nombre = c.String(),
+                    Apellidos = c.String(),
+                    Correo = c.String(),
+                    Contrasena = c.String(),
+                    RespuestaSecreta = c.String(),
+                    Telefono = c.Int(nullable: false),
+                    FechaNacimiento = c.DateTime(nullable: false),
+                    Empresa_IdEmpresa = c.Int(),
+                })
                 .PrimaryKey(t => t.IdEncargadoVentas);
-            
+
             CreateTable(
                 "dbo.Productoes",
                 c => new
-                    {
-                        IdProducto = c.Int(nullable: false, identity: true),
-                        Descripcion = c.String(),
-                        CompraMinima = c.Int(nullable: false),
-                        CompraMaxima = c.Int(nullable: false),
-                        FechaPublicacion = c.DateTime(nullable: false),
-                        Valor = c.Int(nullable: false),
-                        Descuento = c.Double(nullable: false),
-                        Stock = c.Int(nullable: false),
-                        EncargadoVentasId = c.Int(),
-                        LocalId = c.Int(),
-                        CategoriaId = c.Int(),
-                        Categoria_IdCategoria = c.Int(),
-                        EncargadoVentas_IdEncargadoVentas = c.Int(),
-                        Local_IdLocal = c.Int(),
-                    })
+                {
+                    IdProducto = c.Int(nullable: false, identity: true),
+                    Descripcion = c.String(),
+                    CompraMinima = c.Int(nullable: false),
+                    CompraMaxima = c.Int(nullable: false),
+                    FechaPublicacion = c.DateTime(nullable: false),
+                    Valor = c.Int(nullable: false),
+                    Descuento = c.Double(nullable: false),
+                    Stock = c.Int(nullable: false),
+                    EncargadoVentasId = c.Int(),
+                    LocalId = c.Int(),
+                    CategoriaId = c.Int(),
+                    Categoria_IdCategoria = c.Int(),
+                    EncargadoVentas_IdEncargadoVentas = c.Int(),
+                    Local_IdLocal = c.Int(),
+                })
                 .PrimaryKey(t => t.IdProducto);
-            
+
             CreateTable(
                 "dbo.Categorias",
                 c => new
-                    {
-                        IdCategoria = c.Int(nullable: false, identity: true),
-                        Descripcion = c.String(),
-                    })
+                {
+                    IdCategoria = c.Int(nullable: false, identity: true),
+                    Descripcion = c.String(),
+                })
                 .PrimaryKey(t => t.IdCategoria);
-            
+
             AddColumn("dbo.Usuarios", "RespuestaSecreta", c => c.String());
             AddColumn("dbo.Usuarios", "Contrasena", c => c.String());
             DropForeignKey("dbo.Usuarios", "TipoUsuario_IdTipoUsuario", "dbo.TipoUsuarios");

@@ -13,11 +13,11 @@ namespace MisOfertas.WEB
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
             if (!IsPostBack)
             {
                 CargarGV();
-               
+
             }
         }
 
@@ -58,7 +58,7 @@ namespace MisOfertas.WEB
 
         protected void btntxt_Click(object sender, ImageClickEventArgs e)
         {
-            
+
             StringBuilder sw = new StringBuilder();
             NOferta oferta = new NOferta();
             var listaOfertas = oferta.ToList();
@@ -71,16 +71,16 @@ namespace MisOfertas.WEB
                 }
                 else
                 {
-                    sw.Append(item.IdOferta + ";"+ item.Descripcion +";" +item.Valor+";"); //adjuntar las cosas q quiero para archivo plano
+                    sw.Append(item.IdOferta + ";" + item.Descripcion + ";" + item.Valor + ";"); //adjuntar las cosas q quiero para archivo plano
                 }
-               
+
 
                 conteo--;
             }
 
 
             Response.Clear();
-           
+
             Response.ContentType = "application/octet-stream";
             Response.AddHeader("Content-Disposition", "attachment;filename=LISTAOFERTAS.txt");
             Response.Buffer = true;
@@ -103,7 +103,7 @@ namespace MisOfertas.WEB
         {
             NOferta oferta = new NOferta();
             var objOferta = oferta.Traer(IDOferta);
-                txteditar.Text = objOferta.Descripcion;
+            txteditar.Text = objOferta.Descripcion;
         }
 
         protected void btnGuardarEditar_Click(object sender, EventArgs e)
@@ -125,8 +125,8 @@ namespace MisOfertas.WEB
     }
 
 }
-        
-    
+
+
 
 
 

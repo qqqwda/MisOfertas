@@ -2,18 +2,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MisOfertas.CapaNegocio
 {
     public class UserManager : IMaintanable<User>
     {
-        
-        
+
+
         public UserManager()
         {
-            
+
         }
 
         public Response<User> Create(User user)
@@ -46,15 +44,15 @@ namespace MisOfertas.CapaNegocio
             {
                 return new Response<User> { Message = ex.ToString() };
             }
-            
+
         }
 
         public Response<User> Delete(int id)
         {
             int userExist = CommonContext.GetInstance().Users.Where(u => u.IdUser == id).Count();
-            if(!(userExist > 0))
+            if (!(userExist > 0))
             {
-                return new Response<User> { Message="This user id doesn't exist" };
+                return new Response<User> { Message = "This user id doesn't exist" };
             }
 
             var userToEliminate = CommonContext.GetInstance().Users.SingleOrDefault(u => u.IdUser == id);
@@ -67,16 +65,16 @@ namespace MisOfertas.CapaNegocio
         {
             var userToDelete = CommonContext.GetInstance().Users.Where(u => u.Email.Equals(nombre)).FirstOrDefault();
             CommonContext.GetInstance().Users.Remove(userToDelete);
-            return new Response<User> { IsSuccess=true, Answer=null, Message="Deleted of user success"};
+            return new Response<User> { IsSuccess = true, Answer = null, Message = "Deleted of user success" };
         }
 
-        
+
 
         public List<User> ToList()
         {
             return CommonContext.GetInstance().Users.ToList();
         }
-        
+
 
         public Response<User> Update(int id, User obj)
         {

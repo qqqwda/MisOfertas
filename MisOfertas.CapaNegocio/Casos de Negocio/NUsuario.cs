@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace MisOfertas.CapaNegocio.Casos_de_Negocio
 {
@@ -106,7 +105,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
             }
 
             string pwEncriptada = Encriptar(usuario.Password);
-      
+
             Bd.Database.ExecuteSqlCommand("INSERT INTO Usuarios(Rut, Nombre, Apellido, Correo, Telefono, FechaNacimiento, TipoUsuario_IdTipoUsuario, Password, Suscrito, Puntos, Empresa_IdEmpresa, Comuna) VALUES({0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11})"
                 , usuario.Rut, usuario.Nombre, usuario.Apellido, usuario.Correo, usuario.Telefono, usuario.FechaNacimiento, usuario.IdTipoUsuario, pwEncriptada, usuario.Suscrito, usuario.Puntos, usuario.IdEmpresa, usuario.Comuna);
             Bd.SaveChanges();

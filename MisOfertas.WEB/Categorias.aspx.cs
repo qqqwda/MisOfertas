@@ -1,11 +1,8 @@
 ﻿using MisOfertas.CapaNegocio.Casos_de_Negocio;
 using MisOfertas.CapaNegocio.Casos_de_Negocio_Web.Helper;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace MisOfertas.WEB
@@ -18,7 +15,7 @@ namespace MisOfertas.WEB
             {
                 CargarCategorias();
             }
-            
+
         }
 
         private void CargarCategorias()
@@ -33,6 +30,6 @@ namespace MisOfertas.WEB
             int id = int.Parse(e.CommandArgument.ToString());
             Response.Redirect("Categoria.aspx?id=" + id);
         }
-        
+
     }
 }

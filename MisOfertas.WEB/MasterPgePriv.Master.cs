@@ -1,10 +1,5 @@
 ﻿using MisOfertas.CapaDatos.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace MisOfertas.WEB
 {
@@ -32,7 +27,7 @@ namespace MisOfertas.WEB
         private void CargarDefault(Usuario objUsuario)
         {
 
-           
+
             liInicioSesion.InnerText = "Bienvenido/En Sesion: " + objUsuario.Nombre + " " + objUsuario.Apellido;
             cargaNombre.InnerText = "Bienvenido/a Encargado :" + objUsuario.Nombre;
         }

@@ -1,9 +1,7 @@
 ﻿using MisOfertas.CapaDatos.Models;
 using MisOfertas.CapaNegocio.Casos_de_Negocio;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.UI;
@@ -12,17 +10,17 @@ using System.Web.UI.WebControls;
 
 namespace MisOfertas.WEB
 {
-	public partial class MisPuntos : System.Web.UI.Page
-	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
+    public partial class MisPuntos : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
             NUsuario usuario = new NUsuario();
             var sesion = (Usuario)Session["usuario"];
 
             if (!IsPostBack && sesion != null)
             {
-                
-                hPuntos.InnerText = "Porcentaje De Descuento/Mis Puntos. Usted tiene: "+sesion.Puntos.ToString()+" Puntos";
+
+                hPuntos.InnerText = "Porcentaje De Descuento/Mis Puntos. Usted tiene: ----> " + sesion.Puntos.ToString() + " Puntos";
             }
             else
             {
@@ -61,7 +59,7 @@ namespace MisOfertas.WEB
 
 
 
-        
+
 
 
 

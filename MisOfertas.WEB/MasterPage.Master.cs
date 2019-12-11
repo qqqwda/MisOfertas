@@ -23,15 +23,15 @@ namespace MisOfertas.WEB
                 //Session.Abandon");
             }
         }
-            
+
 
         private void CargarDefault(Usuario objUsuario)
         {
-            
-            liCorreo.InnerHtml = "Inicio sesion con :"+" "+ objUsuario.Correo;
+
+            liCorreo.InnerHtml = "Inicio sesion con :" + " " + objUsuario.Correo;
             //liCelular.InnerHtml = "su telefono"+objUsuario.Telefono.ToString();
-            liInicioSesion.InnerText = "Bienvenido/a " + objUsuario.Nombre + " " +  objUsuario.Apellido;
-            liCerrarSesion.InnerText = "Cerrar Session"  +" "+ objUsuario.Nombre;
+            liInicioSesion.InnerText = "Bienvenido/a " + objUsuario.Nombre + " " + objUsuario.Apellido;
+            liCerrarSesion.InnerText = "Cerrar Session" + " " + objUsuario.Nombre;
             liSacarRegistrar.InnerText = " ";
             liSacarPuntoXlogeo.InnerText = "Mis Puntos";
         }
@@ -67,8 +67,8 @@ namespace MisOfertas.WEB
 
                 if (correo.Equals("txtCorreo") == false)
                 {
-                //System.Net.Mail.Attachment archivo = new Attachment("C:/Users/CRISTOPHER/Desktop/DEMRE/BUENA.pdf");
-                correos.Attachments.Add(new Attachment("C:/Users/CRISTOPHER/Documents/GitHub/MisOfertas/MisOfertas.Web/Img/MisOfertas.png")); 
+                    //System.Net.Mail.Attachment archivo = new Attachment("C:/Users/CRISTOPHER/Desktop/DEMRE/BUENA.pdf");
+                    correos.Attachments.Add(new Attachment("C:/Users/CRISTOPHER/Documents/GitHub/MisOfertas/MisOfertas.Web/Img/MisOfertas.png"));
                 }
 
                 correos.From = new MailAddress("ofertas.portafolio@gmail.com");

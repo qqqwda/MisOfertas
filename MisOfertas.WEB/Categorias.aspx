@@ -52,11 +52,11 @@
 												</div>
 											</div>
 											<div class="product-body">
-												<p class="product-name">'<%#Eval("Descripcion")%>'</p>
+												<h4 class="product-rating">'<%#Eval("Descripcion")%>'</h4>
 												<%--<h3 class="product-category">'<%#Eval("Descripcion")%>'</h3>--%>
 												<%--<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>--%>
-												<div class="product-rating">
-													<h3 id="hPuntuacion">'<%#Eval("PromedioPuntuacion")%>'</h3>
+												<div class="product-name">
+													<p id="hPuntuacion">'<%#Eval("PromedioPuntuacion")%>'</p>
 												</div>
 												<%--<div class="product-btns">
 													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">añadir a favoritos</span></button>

@@ -3,8 +3,6 @@ using MisOfertas.CapaDatos.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MisOfertas.CapaNegocio.Casos_de_Negocio
 {
@@ -33,7 +31,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
             Bd.Locales.Add(local);
             Bd.SaveChanges();
 
-            return new Response<Local> { Answer = local, Message = "Local creado", IsSuccess=true };
+            return new Response<Local> { Answer = local, Message = "Local creado", IsSuccess = true };
         }
 
         public Response<Local> Delete(int id)
@@ -50,7 +48,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
                     IsSuccess = true,
                     Message = "Local creado"
                 };
-               
+
             }
             catch (Exception)
             {
@@ -75,7 +73,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
                 return null;
             }
         }
-        
+
 
         public Response<Local> Update(int id, Local obj)
         {

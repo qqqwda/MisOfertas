@@ -1,12 +1,7 @@
 ﻿using MisOfertas.CapaDatos.JModels;
 using MisOfertas.CapaDatos.Models;
 using MisOfertas.CapaNegocio.Casos_de_Negocio;
-using MisOfertas.CapaNegocio.Casos_de_Negocio_Web.Helper;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace MisOfertas.WEB
@@ -14,7 +9,7 @@ namespace MisOfertas.WEB
     public partial class CrearOferta : System.Web.UI.Page
     {
 
-        
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,20 +18,20 @@ namespace MisOfertas.WEB
             {
                 Response.Redirect("Inicio.aspx");
             }
-            
+
 
             NProducto negocioProducto = new NProducto();
             ddlProducto.DataSource = negocioProducto.ToListModel();
 
-            ddlProducto.Items.Add(new ListItem("Seleccione Un Producto","0"));
+            ddlProducto.Items.Add(new ListItem("Seleccione Un Producto", "0"));
 
             foreach (var item in negocioProducto.ToListModel())
             {
                 ListItem i = new ListItem(item.Nombre, item.IdProducto.ToString());
                 ddlProducto.Items.Add(i);
-                
+
             }
-            
+
 
         }
 

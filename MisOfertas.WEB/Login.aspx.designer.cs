@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace MisOfertas.WEB {
-    
-    
-    public partial class Login {
-        
+namespace MisOfertas.WEB
+{
+
+
+    public partial class Login
+    {
+
         /// <summary>
         /// Control txtCorreo.
         /// </summary>
@@ -20,7 +22,7 @@ namespace MisOfertas.WEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCorreo;
-        
+
         /// <summary>
         /// Control txtPass.
         /// </summary>
@@ -29,7 +31,7 @@ namespace MisOfertas.WEB {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPass;
-        
+
         /// <summary>
         /// Control btnEntrar.
         /// </summary>

@@ -1,10 +1,5 @@
 ﻿using MisOfertas.CapaDatos.Models;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MisOfertas.CapaDatos
 {
@@ -27,7 +22,7 @@ namespace MisOfertas.CapaDatos
         }
 
         public DbSet<User> Users { get; set; }
-        
+
         public DbSet<TipoUsuario> TipoUsuarios { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Producto> Productos { get; set; }
@@ -37,10 +32,10 @@ namespace MisOfertas.CapaDatos
         public DbSet<Empresa> Empresas { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Valoracion> Valoraciones { get; set; }
-        
 
 
-        
+
+
 
     }
 }

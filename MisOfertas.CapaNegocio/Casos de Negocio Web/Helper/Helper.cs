@@ -1,5 +1,4 @@
-﻿using ClosedXML.Excel;
-using MisOfertas.CapaDatos.JModels;
+﻿using MisOfertas.CapaDatos.JModels;
 using MisOfertas.CapaDatos.Models;
 using MisOfertas.CapaNegocio.Casos_de_Negocio;
 using System;
@@ -7,8 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MisOfertas.CapaNegocio.Casos_de_Negocio_Web.Helper
 {
@@ -190,10 +187,10 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio_Web.Helper
 
         public static List<CategoriaPuntuacionModel> ToCategoriaPuntuacion(List<Categoria> categorias)
         {
-            List <CategoriaPuntuacionModel> categoriaPuntuacion = new List<CategoriaPuntuacionModel>();
+            List<CategoriaPuntuacionModel> categoriaPuntuacion = new List<CategoriaPuntuacionModel>();
             NValoracion nValoracion = new NValoracion();
 
-           
+
 
             foreach (var item in categorias)
             {
@@ -215,8 +212,8 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio_Web.Helper
                 {
 
                     var result = ((double)sumaVal / (double)count);
-                
-                    
+
+
                     model.PromedioPuntuacion = "Valoración promedio: " + result.ToString();
                 }
                 catch (Exception)
@@ -224,9 +221,9 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio_Web.Helper
 
                     model.PromedioPuntuacion = "Valoración promedio: 0";
                 }
-                
 
-               categoriaPuntuacion.Add(model);
+
+                categoriaPuntuacion.Add(model);
             }
 
 
@@ -237,7 +234,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio_Web.Helper
     }
 
 
-    
 
-    
+
+
 }

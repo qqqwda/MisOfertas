@@ -15,9 +15,9 @@ namespace MisOfertas.WEB
             }
         }
 
-        
 
-        
+
+
 
         protected void btnEntrar_Click(object sender, EventArgs e)
         {
@@ -53,10 +53,15 @@ namespace MisOfertas.WEB
             }
         }
 
+        protected void BTNinicio_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("INICIO.aspx");
+        }
+
         //protected void BtnVolver_Click(object sender, ImageClickEventArgs e)
         //{
         //    Response.Redirect("OfertasHot.aspx");
         //}
     }
 }
-    
+

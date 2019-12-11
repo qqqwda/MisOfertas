@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MisOfertas.CapaNegocio.Casos_de_Negocio
+﻿namespace MisOfertas.CapaNegocio.Casos_de_Negocio
 {
     public class MainCasosNegocio
     {

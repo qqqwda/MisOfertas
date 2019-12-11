@@ -1,12 +1,8 @@
 ﻿using MisOfertas.API.Models;
 using MisOfertas.CapaDatos;
 using MisOfertas.CapaNegocio;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Http;
-using System.Web.Mvc;
 
 namespace MisOfertas.API.Controllers
 {
@@ -31,7 +27,7 @@ namespace MisOfertas.API.Controllers
             var response = manager.Create(user);
             if (response.IsSuccess)
             {
-                return Ok(response.Message); 
+                return Ok(response.Message);
             }
 
             return BadRequest(response.Message);

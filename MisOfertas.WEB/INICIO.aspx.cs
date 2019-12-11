@@ -1,5 +1,4 @@
 ﻿using MisOfertas.CapaDatos.Models;
-using MisOfertas.CapaNegocio.Casos_de_Negocio;
 using System;
 
 namespace MisOfertas.WEB
@@ -10,21 +9,21 @@ namespace MisOfertas.WEB
         protected void Page_Load(object sender, EventArgs e)
         {
 
-           
+
             if (!IsPostBack)
             {
-                if((Usuario)Session["usuario"] != null )
+                if ((Usuario)Session["usuario"] != null)
                 {
                     objUsuario = (Usuario)Session["usuario"];
-                    switch(objUsuario.TipoUsuario.IdTipoUsuario)
+                    switch (objUsuario.TipoUsuario.IdTipoUsuario)
                     {
                         case 1:
                             break;
                         case 2:
-                            break;  
-                            //administrador
+                            break;
+                        //administrador
                         case 3:
-                            
+
                             break;
                         default:
                             break;

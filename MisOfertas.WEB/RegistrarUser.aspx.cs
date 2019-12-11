@@ -1,5 +1,4 @@
-﻿using MisOfertas.CapaDatos.JModels;
-using MisOfertas.CapaDatos.Models;
+﻿using MisOfertas.CapaDatos.Models;
 using MisOfertas.CapaNegocio.Casos_de_Negocio;
 
 using System;
@@ -9,7 +8,7 @@ namespace MisOfertas.WEB
 {
     public partial class RegistrarUser : System.Web.UI.Page
     {
-         public Usuario user { get { return (Usuario)Session["usuario"]; } set { Session["usuario"] = value; } } 
+        public Usuario user { get { return (Usuario)Session["usuario"]; } set { Session["usuario"] = value; } }
         protected void Page_Load(object sender, EventArgs e)
         {
             //if (!IsPostBack)
@@ -41,20 +40,20 @@ namespace MisOfertas.WEB
             oUser.Password = txtPassword.Text;
             oUser.Correo = txtCorreo.Text;
             oUser.FechaNacimiento = DateTime.Parse(txtFechaNacimiento.Text);
-            oUser.Comuna=txtComuna.Text;
+            oUser.Comuna = txtComuna.Text;
 
             NUsuario us = new NUsuario();
             var resultado = us.Create(oUser);
 
             if (resultado.IsSuccess)
             {
-                
+
                 LimpiarControles();
 
                 //ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), Guid.NewGuid().ToString(), "alert('Se ha Registrado Exitosamente! Felicidades!!')", true);
 
                 ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal('Registro Exitoso!', 'Felicidades, Presione Ok!', 'success') </script>"); /*ésto es sweet alert llamado del script y link*/
-                    //ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "redirigir");
+                                                                                                                                                                       //ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "redirigir");
             }
 
 
@@ -82,7 +81,7 @@ namespace MisOfertas.WEB
         }
     }
 }
-    
+
 
 
 

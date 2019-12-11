@@ -34,7 +34,7 @@
 						<!-- Billing Details --><
 						<div class="billing-details">
 							<div class="section-title">
-								<h3 class="title">ACTUALIZAR OFERTAS</h3>
+								<h3 class="title"> ACTUALIZAR OFERTAS</h3>
 							</div>
                             <div class="form-group">
                             <asp:DropDownList ID="ddlProducto" runat="server" Width="350">
@@ -43,20 +43,24 @@
                             </div>
 
 							<div class="form-group">
+                                <asp:Label ID="Label3" runat="server" Text="Compra Minima del producto :"></asp:Label>
 							<asp:TextBox ID="txtcompraMin" runat="server" class="input" type="number" name="compraMin" placeholder="Compra Minima del producto" ></asp:TextBox>
 							</div>
 							<div class="form-group">
+                                 <asp:Label ID="Label2" runat="server" Text="Compra Maxima del producto :"></asp:Label>
 								<asp:TextBox ID="txtCompraMax" runat="server" class="input" type="number" name="CompraMax" placeholder="Compra Maxima del producto"  ></asp:TextBox>
 							</div>
 							<div class="form-group">
                              <asp:Label ID="lblFecha" runat="server" Text="Fecha disponibilidad del producto"></asp:Label>
-							<asp:TextBox ID="txtfechaProduct" runat="server" class="input" type="date" name="fechaProduct" placeholder="Fecha disponibilidad del producto" ></asp:TextBox>
+							<asp:TextBox ID="txtfechaProduct" runat="server" class="input" type="datetime" name="fechaProduct" placeholder="Fecha disponibilidad del producto" ></asp:TextBox>
 							</div>
 							<div class="form-group">
-								<asp:TextBox ID="txtValor" runat="server" class="input" type="number" name="Valor" placeholder="Valor del producto " ></asp:TextBox>
+                                <asp:Label ID="Label4" runat="server" Text="Valor del producto $ :"></asp:Label>
+								<asp:TextBox ID="txtValor" runat="server" class="input"  name="Valor" placeholder="Valor del producto " ></asp:TextBox>
 							</div>
 							<div class="form-group">
-								<asp:TextBox ID="txtDescuento" runat="server" class="input" type="number" name="Porcentaje de Descuento" placeholder="Descuento otorgado al producto" ></asp:TextBox>
+                                  <asp:Label ID="Label7" runat="server" Text="Porcentaje de Descuento % :"></asp:Label>
+								<asp:TextBox ID="txtDescuento" runat="server" class="input"  name="Porcentaje de Descuento" placeholder="Descuento otorgado al producto" ></asp:TextBox>
 							</div>
                             <div  class="form-group">
                                <%-- <input type="text" name="descripcion" />--%>

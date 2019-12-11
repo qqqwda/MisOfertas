@@ -4,8 +4,6 @@ using MisOfertas.CapaDatos.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MisOfertas.CapaNegocio.Casos_de_Negocio
 {
@@ -42,7 +40,9 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
 
             return new Response<Oferta>
             {
-                Answer = null, IsSuccess = true, Message = "Oferta creada"
+                Answer = null,
+                IsSuccess = true,
+                Message = "Oferta creada"
             };
         }
 
@@ -112,12 +112,12 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
                 producto.Stock = item.Producto.Stock;
                 producto.Temporada = item.Producto.Temporada;
                 producto.Modelo = item.Producto.Modelo;
-                
+
 
                 oferta.Producto = producto;
                 listaOferta.Add(oferta);
 
-                
+
             }
 
             return listaOferta;
@@ -192,6 +192,6 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
 
     }
 
-        
-    
+
+
 }

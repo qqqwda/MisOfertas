@@ -19,7 +19,7 @@
 							<h3 class="title">Las Mejores Ofertas</h3>
 							<div class="section-nav">
 								<ul class="section-tab-nav tab-nav">
-									<li class="active"><a data-toggle="tab" href="#tab2">Notbook</a></li>
+									<li class="active"><a data-toggle="tab" href="#tab2">Notebook</a></li>
 									<li><a data-toggle="tab" href="#tab2">Celulares</a></li>
 									<li><a data-toggle="tab" href="#tab2">Camaras</a></li>
 									<li><a data-toggle="tab" href="#tab2">Accessorios</a></li>
@@ -48,7 +48,7 @@
 											<div class="product-body">
 												<p class="product-category">Categoria</p>
 												<h3 class="product-name"><a href="#">nombre producto</a></h3>
-												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+												<h4 class="product-price">$152.000 <del class="product-old-price">$990.00</del></h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
 													<i class="fa fa-star"></i>

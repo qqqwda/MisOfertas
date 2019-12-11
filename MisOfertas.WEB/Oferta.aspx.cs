@@ -4,14 +4,7 @@ using MisOfertas.CapaNegocio.Casos_de_Negocio;
 using MisOfertas.CapaNegocio.Casos_de_Negocio_Web.Helper;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace MisOfertas.WEB
@@ -27,7 +20,7 @@ namespace MisOfertas.WEB
                 int idOferta = int.Parse(id);
                 List<OfertaProductoModel> oferta;
                 oferta = Helper.OfertasProductosSegunOferta(idOferta);
-                
+
                 dlOferta.DataSource = oferta;
                 dlOferta.DataBind();
 
@@ -37,7 +30,7 @@ namespace MisOfertas.WEB
             }
         }
 
-        
+
 
         private List<CapaDatos.Models.Oferta> CargarOferta(int id)
         {
@@ -55,7 +48,7 @@ namespace MisOfertas.WEB
                 throw;
             }
 
-            
+
         }
 
 
@@ -81,11 +74,11 @@ namespace MisOfertas.WEB
             valoracion.Evaluacion = index + 1;
             valoracion.IdOferta = idOferta;
             valoracion.IdUsuario = sesion.IdUsuario;
-            
+
             negocioValoracion.Create(valoracion);
 
-            
-            
+
+
         }
 
         protected void PublicarComentario_Click(object sender, EventArgs e)
@@ -95,7 +88,7 @@ namespace MisOfertas.WEB
             {
                 AgregarComentario();
                 string id = Request.QueryString["id"];
-                
+
                 NOpinionOferta opiniones = new NOpinionOferta();
                 int idOpinion = opiniones.ToList().OrderByDescending(o => o.IdOpinionOferta).FirstOrDefault().IdOpinionOferta;
                 var url = "http://ofertasportafoli-001-site1.dtempurl.com/api/subirBoleta/";
@@ -108,22 +101,22 @@ namespace MisOfertas.WEB
 
                     throw;
                 }
-                
+
 
 
 
                 Response.Redirect("Oferta.aspx?id=" + id);
 
-                
+
             }
             else
             {
                 Response.Redirect("Login.aspx");
             }
-            
+
         }
 
-        
+
 
 
     }

@@ -4,8 +4,6 @@ using MisOfertas.CapaDatos.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MisOfertas.CapaNegocio.Casos_de_Negocio
 {
@@ -114,7 +112,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
                 return new Response<Producto> { IsSuccess = true, Answer = null, Message = "Stock debe ser mayor a 0" };
             }
 
-            
+
             Bd.Database.ExecuteSqlCommand("INSERT INTO productoes(PrecioNormal, Descripcion, Marca, Modelo, Stock, Categoria_IdCategoria, Empresa_IdEmpresa, Nombre, FechaVencimiento, Imagen, Temporada) VALUES ({0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10})",
                 producto.PrecioNormal, producto.Descripcion, producto.Marca, producto.Modelo, producto.Stock, producto.IdCategoria, producto.IdEmpresa, producto.Nombre, producto.FechaVencimiento, producto.Imagen, producto.Temporada);
             var prod = Bd.Productos.OrderByDescending(p => p.IdProducto).FirstOrDefault();
@@ -135,7 +133,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
                     Bd.Productos.Remove(producto);
                     Bd.SaveChanges();
 
-                    return new Response<Producto> { Answer = producto, IsSuccess= true, Message="Producto eliminado"};
+                    return new Response<Producto> { Answer = producto, IsSuccess = true, Message = "Producto eliminado" };
                 }
                 else
                 {
@@ -145,7 +143,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
             catch (Exception ex)
             {
 
-                return new Response<Producto> { Answer = null, IsSuccess = false, Message = "No se pudo eliminar :"+ex.ToString() };
+                return new Response<Producto> { Answer = null, IsSuccess = false, Message = "No se pudo eliminar :" + ex.ToString() };
             }
         }
 
@@ -155,7 +153,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
         }
         public List<ProductoModel> ToListModel()
         {
-            List <ProductoModel> listaProducto = new List<ProductoModel>();
+            List<ProductoModel> listaProducto = new List<ProductoModel>();
             List<Producto> productos = new List<Producto>();
             productos = Bd.Productos.ToList();
             foreach (var item in productos)
@@ -176,7 +174,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
                         PrecioNormal = item.PrecioNormal,
                         Stock = item.Stock,
                         Temporada = item.Temporada,
-                        
+
                     });
                 }
                 catch (Exception)
@@ -184,7 +182,7 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
 
                     throw;
                 }
-                
+
             }
 
             return listaProducto;

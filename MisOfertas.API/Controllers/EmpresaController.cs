@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using MisOfertas.API.Models;
+﻿using MisOfertas.API.Models;
 using MisOfertas.CapaDatos.JModels;
 using MisOfertas.CapaDatos.Models;
 using MisOfertas.CapaNegocio.Casos_de_Negocio;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Http;
 
 namespace MisOfertas.API.Controllers
 {
@@ -48,10 +45,10 @@ namespace MisOfertas.API.Controllers
 
             return BadRequest(response.Message);
         }
-        
+
         public IHttpActionResult Put(int id, [FromBody] EmpresaModel empresa)
         {
-            var response = Negocio.Update(id,empresa);
+            var response = Negocio.Update(id, empresa);
             if (response.IsSuccess)
             {
                 return Ok(response.Message);

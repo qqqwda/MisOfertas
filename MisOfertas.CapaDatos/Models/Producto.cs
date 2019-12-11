@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MisOfertas.CapaDatos.Models
 {
@@ -21,9 +17,9 @@ namespace MisOfertas.CapaDatos.Models
         public DateTime FechaVencimiento { get; set; }
         public string Temporada { get; set; }
 
-        
+
         public virtual Empresa Empresa { get; set; }
-        
+
         public virtual Categoria Categoria { get; set; }
     }
 }

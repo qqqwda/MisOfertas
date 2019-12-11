@@ -2,10 +2,7 @@
 using MisOfertas.CapaDatos.Models;
 using MisOfertas.CapaNegocio.Casos_de_Negocio;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace MisOfertas.WEB
@@ -13,7 +10,7 @@ namespace MisOfertas.WEB
     public partial class EditarOferta : System.Web.UI.Page
     {
 
-        
+
         int intId;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,14 +26,14 @@ namespace MisOfertas.WEB
                 intId = int.Parse(id);
                 CargarDatos(id);
                 NOferta noferta = new NOferta();
-                
+
             }
-            
+
         }
 
         private void CargarDatos(string id)
         {
-            
+
             CargarCombo();
 
             NOferta noferta = new NOferta();
@@ -68,38 +65,40 @@ namespace MisOfertas.WEB
 
         protected void BtnActualizarOferta_Click(object sender, EventArgs e)
         {
-            
-                NOferta noferta = new NOferta();
-                OfertaModel ofertaModel = new OfertaModel();
-                var sesion = (Usuario)Session["usuario"];
-                ofertaModel.CompraMax = (int)(decimal.Parse(txtCompraMax.Text));
-                ofertaModel.CompraMin = (int)(decimal.Parse(txtcompraMin.Text));
-                ofertaModel.Descripcion = txtDescripcion.InnerText;
-               
 
-                ofertaModel.PorcentajeDescuento = (int)(decimal.Parse(txtDescuento.Text));
-                ofertaModel.Valor = int.Parse(txtValor.Text);
-                ofertaModel.FechaDisponibilidad = DateTime.Parse(txtfechaProduct.Text);
-                ofertaModel.IdProducto = int.Parse(ddlProducto.SelectedItem.Value);
-                ofertaModel.IdUsuario = sesion.IdUsuario;
+            NOferta noferta = new NOferta();
+            OfertaModel ofertaModel = new OfertaModel();
+            var sesion = (Usuario)Session["usuario"];
+            ofertaModel.CompraMax = (int)(decimal.Parse(txtCompraMax.Text));
+            ofertaModel.CompraMin = (int)(decimal.Parse(txtcompraMin.Text));
+            ofertaModel.Descripcion = txtDescripcion.InnerText;
 
-                string id = Request.QueryString["id"];
-                int idProd = int.Parse(id);
-                noferta.UpdateModel(idProd, ofertaModel);
 
-           
+            ofertaModel.PorcentajeDescuento = (int)(decimal.Parse(txtDescuento.Text));
+            ofertaModel.Valor = int.Parse(txtValor.Text);
+            ofertaModel.FechaDisponibilidad = DateTime.Parse(txtfechaProduct.Text);
+            ofertaModel.IdProducto = int.Parse(ddlProducto.SelectedItem.Value);
+            ofertaModel.IdUsuario = sesion.IdUsuario;
+
+            string id = Request.QueryString["id"];
+            int idProd = int.Parse(id);
+            noferta.UpdateModel(idProd, ofertaModel);
+
+
             Response.Redirect("HomeEncargado.aspx");
-            
-            
+
+
 
 
         }
 
         protected void BtnEliminarOferta_Click(object sender, EventArgs e)
         {
+            string id = Request.QueryString["id"];
+            int idProd = int.Parse(id);
             NOferta noferta = new NOferta();
-            noferta.Delete(intId);
-           
+            noferta.Delete(idProd);
+            ClientScript.RegisterStartupScript(this.GetType(), "mensaje", "<script> swal('Se Ha eliminado con exito la oferta!', 'Felicidades, Presione Ok!', 'success') </script>");
             Response.Redirect("HomeEncargado.aspx");
         }
     }

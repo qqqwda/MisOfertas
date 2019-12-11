@@ -1,9 +1,7 @@
 ﻿using MisOfertas.CapaDatos.Models;
 using MisOfertas.CapaNegocio.Casos_de_Negocio;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.UI;
@@ -41,7 +39,7 @@ namespace MisOfertas.WEB
             GvOfertas.DataBind();
 
             NOferta negocioOferta = new NOferta();
-          
+
         }
 
         protected void BtnExportarExcel_Click(object sender, ImageClickEventArgs e)

@@ -1,9 +1,5 @@
 ﻿using MisOfertas.CapaDatos;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MisOfertas.CapaNegocio
 {
@@ -14,7 +10,7 @@ namespace MisOfertas.CapaNegocio
 
         Response<T> Update(int id, T obj);
 
-        Response<T> Delete (int id);
+        Response<T> Delete(int id);
 
 
 

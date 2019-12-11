@@ -4,8 +4,6 @@ using MisOfertas.CapaDatos.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MisOfertas.CapaNegocio.Casos_de_Negocio
 {
@@ -34,9 +32,9 @@ namespace MisOfertas.CapaNegocio.Casos_de_Negocio
             catch (Exception ex)
             {
 
-                return new Response<OpinionOferta> { Answer = null, IsSuccess = false, Message = "Error al cargar comentario: "+ex.Message };
+                return new Response<OpinionOferta> { Answer = null, IsSuccess = false, Message = "Error al cargar comentario: " + ex.Message };
             }
-            
+
         }
 
         public string AgregarImagen(string nombreImagen, int id)

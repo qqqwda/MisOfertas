@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MisOfertas.CapaNegocio.Casos_de_Negocio_Web.Helper
+﻿namespace MisOfertas.CapaNegocio.Casos_de_Negocio_Web.Helper
 {
     public class EmailHelper
     {
-        public static bool IsValidEmail (string email)
+        public static bool IsValidEmail(string email)
         {
             try
             {
